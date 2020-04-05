@@ -22,8 +22,8 @@ Webhook data is sent as JSON in the POST request body. The full transaction deta
     "Data": {
         "EventType": "TransactionConfirmed",
         "Type": "Webhook",
-        "ResourceID": {ID of the resource. In this case, this will be transaction hash},
-        "MerchantOrderID": {Merchant OrderID if you specified MerchantOrderID field when generating QR code}
+        "ResourceID": "{ID of the resource. In this case, this will be transaction hash}",
+        "MerchantOrderID": "{Merchant OrderID if you specified MerchantOrderID field when generating QR code}"
     }
 }
 ```

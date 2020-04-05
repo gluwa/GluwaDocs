@@ -33,4 +33,12 @@
 ## API
 
 * [API Reference](api/api.md)
+* [Authentication](api/authentication.md)
+* [Balance](api/balance.md)
+* [Fee](api/fee.md)
+* [Transaction](api/transaction.md)
+* [QR Code](api/qr-code.md)
+* [Quote](api/quote.md)
+* [Order](api/order.md)
+* [Order Book](api/order-book.md)
 
