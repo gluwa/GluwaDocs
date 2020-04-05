@@ -32,6 +32,10 @@ https://sandbox.api.gluwa.com
 
 By default, the Gluwa API Docs demonstrate using curl to interact with the API over HTTP. Select one of our official Software Development Kits \(SDK\) to see examples in code.
 
+{% page-ref page="../development/gluwa-sdk-for-php.md" %}
+
+{% page-ref page="../development/gluwa-sdk-for-.net.md" %}
+
 ## Authentication
 
 The Gluwa API utilizes various authentication methods that fits each endpoint. Follow the link below to learn more.
