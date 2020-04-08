@@ -2,7 +2,7 @@
 
 ## Watch Explainer Video
 
-[![Send Gluwacoin](http://img.youtube.com/vi/kE2HA-W5jUM/0.jpg)](http://www.youtube.com/watch?v=kE2HA-W5jUM)
+[![Send Gluwacoin](../../.gitbook/assets/Gluwa%20Wallet%20Youtube%20Thumbnail-send.jpg)](http://www.youtube.com/watch?v=kE2HA-W5jUM)
 
 To send Gluwacoin to an address manually, you will need the receiver's ETH public address, which always starts `0x`.
 
