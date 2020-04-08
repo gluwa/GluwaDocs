@@ -1,5 +1,7 @@
 # Send Gluwacoin to an address
 
+[![Send Gluwacoin](http://img.youtube.com/vi/kE2HA-W5jUM/0.jpg)](http://www.youtube.com/watch?v=kE2HA-W5jUM)
+
 To send Gluwacoin to an address manually, you will need the receiver's ETH public address, which always starts `0x`.
 
 1. From the **Send** section, type in the amount you want to transfer and press on **Next**
