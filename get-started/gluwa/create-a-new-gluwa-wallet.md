@@ -6,7 +6,7 @@ description: All you need is a smartphone to create Gluwa wallet.
 
 ## Watch Explainer Video
 
-[![Create Wallet](http://img.youtube.com/vi/ENgwGxtFW-E/0.jpg)](http://www.youtube.com/watch?v=ENgwGxtFW-E)
+[![Create Wallet](../../.gitbook/assets/Gluwa%20Wallet%20Youtube%20Thumbnail-create%20wallet.jpg)](http://www.youtube.com/watch?v=ENgwGxtFW-E)
 
 ## Install Gluwa Mobile Application
 
