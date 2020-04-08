@@ -24,13 +24,11 @@ Also, the password is encrypted irreversibly using a hashing algorithm and the u
 
 ![](../../.gitbook/assets/create%20%281%29.png)
 
-##  Backup the Recovery Phrase
+## Backup the Recovery Phrase
 
 Right after creating a new wallet, Gluwa shows a recovery phrase of your wallet. If you either lose your device or the password, you can retrieve your wallet by submitting the recovery phrase. Nobody without the recovery phrase can recover your wallet for you.
 
 {% hint style="danger" %}
 Make sure to backup your recovery phrase. You can submit the recovery phrase to restore the wallet. This is the ONLY way to restore your wallet if you lose access to your wallet for some reason \(e.g., forgetting your password or your smartphone malfunctioning\). It is impossible for Gluwa or anyone to restore the wallet for you.
 {% endhint %}
-
-
 
