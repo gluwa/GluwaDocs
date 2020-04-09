@@ -5,13 +5,13 @@
 ## Get Started
 
 * [Gluwa Mobile App](get-started/gluwa/README.md)
-  * [Non-Custodial Wallet](get-started/gluwa/non-custodial-wallet.md)
   * [Create a New Gluwa Wallet](get-started/gluwa/create-a-new-gluwa-wallet.md)
   * [Restore Wallet](get-started/gluwa/restore-wallet.md)
   * [Send Gluwacoin to an address](get-started/gluwa/send-gluwacoin-to-an-address.md)
   * [Make QR Code Payments](get-started/gluwa/make-qr-code-payments-1.md)
   * [Create a Signature](get-started/gluwa/create-a-signature.md)
   * [Access Private Keys](get-started/gluwa/wallet-credentials.md)
+  * [Non-Custodial Wallet](get-started/gluwa/non-custodial-wallet.md)
 * [Gluwa Dashboard](get-started/dashboard/README.md)
   * [API Keys](get-started/dashboard/api-keys.md)
   * [Webhooks](get-started/dashboard/webhooks.md)
