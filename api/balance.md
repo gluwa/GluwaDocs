@@ -66,7 +66,6 @@ Balance and associated currency
 {
   "Balance": "string",
   "Currency": "string",
-  "Nonce": "integer (int64)",
 	"UnspentOutputs": [
 		{
 		  "Amount": "string",
