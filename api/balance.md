@@ -55,8 +55,7 @@ Balance and associated currency
 ```javascript
 {
   "Balance": "string",
-  "Currency": "string",
-  "Nonce": "integer (int64)"
+  "Currency": "string"
 }
 ```
 {% endtab %}
