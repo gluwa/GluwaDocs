@@ -617,4 +617,5 @@ Note that the code for generating signature for USD-G or KRW-G requires the amou
 
 * USD Gluwacoin - [0xfb0aaa0432112779d9ac483d9d5e3961ece18eec](https://etherscan.io/token/0xfb0aaa0432112779d9ac483d9d5e3961ece18eec)
 * KRW Gluwacoin - [0x4cc8486f2f3dce2d3b5e27057cf565e16906d12d](https://etherscan.io/token/0x4cc8486f2f3dce2d3b5e27057cf565e16906d12d)
+* NGN Gluwacoin - [0x4AB30B965A8Ef0F512DA064B5e574d9Ad73c0e79](https://etherscan.io/token/0x4AB30B965A8Ef0F512DA064B5e574d9Ad73c0e79)
 
