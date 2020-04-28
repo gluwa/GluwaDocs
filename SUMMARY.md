@@ -18,26 +18,30 @@
   * [Addresses](get-started/dashboard/addresses.md)
 * [Gluwacoin](get-started/gluwacoin.md)
 
+## Branding <a id="design"></a>
+
+* [Buttons and Marks](design/buttons-and-marks.md)
+
 ## Development
 
 * [Environments](development/environments.md)
-* [Payment QR Codes](development/payments-1.md)
+* [QR Codes](development/payments-1.md)
 * [Webhooks](development/webhooks.md)
+* [Creating Signatures](development/todo-creating-transaction-signatures.md)
+* [Idempotent Requests](development/todo-idempotent-requests.md)
 * [Gluwa SDK for PHP](development/gluwa-sdk-for-php.md)
 * [Gluwa SDK for .NET](development/gluwa-sdk-for-.net.md)
-
-## Design
-
-* [Buttons and Marks](design/buttons-and-marks.md)
 
 ## API
 
 * [API Reference](api/api.md)
-* [Authentication](api/authentication.md)
+* [Authorization](api/authentication.md)
+* [All Supported Currencies](api/all-supported-currencies.md)
+* [Errors and Error Codes](api/errors-and-error-codes.md)
 * [Balance](api/balance.md)
 * [Fee](api/fee.md)
 * [Transaction](api/transaction.md)
-* [QR Code](api/qr-code.md)
+* [Payment QR Code](api/qr-code.md)
 * [Quote](api/quote.md)
 * [Order](api/order.md)
 * [Order Book](api/order-book.md)

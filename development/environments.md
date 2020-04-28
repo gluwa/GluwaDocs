@@ -4,14 +4,18 @@ description: Use Sandbox to test your integration before going live
 
 # Environments
 
-Gluwa is supported in two environments: sandbox and live. Use the sandbox environment for testing purposes, then move to the live environment for production processing. The sandbox environment is a clone of the live environment and connected to a different URL. Also, the sandbox environment uses [Rinkeby](https://www.rinkeby.io/), a test Ethereum network, instead of the live Ethereum network. Thus, Gluwa provides Gluwacoin faucet, fake money, in the sandbox environment which you can use to test your integration. When testing, use the sandbox credentials and URL. When you are ready to go live, use the live credentials and URL.
+Gluwa is supported in two environments: sandbox and production. As a general rule, use the sandbox environment for testing purposes, then move to the live environment for production processing.
 
-#### **Sandbox Environment URL’s**
+#### **Sandbox Environment**
+
+The sandbox environment is a clone of the production environment. It is connected to [Rinkeby](https://www.rinkeby.io/), a test Ethereum network, for Gluwacoin and Testnet3 for Bitcoin.
+
+Gluwa provides Faucets in sandbox Dashboard for you to deposit test coins into your Ethereum or Bitcoin address in the sandbox environment.  You can use the test coins to test your integration.
 
 * Dashboard: [https://sandbox.dashboard.gluwa.com](https://sandbox.dashboard.gluwa.com)
 * API: [https://sandbox.api.gluwa.com](https://sandbox.api.gluwa.com)
 
-#### **Production Environment URL’s**
+#### **Production Environment**
 
 * Dashboard: [https://dashboard.gluwa.com](https://dashboard.gluwa.com)
 * API: [https://api.gluwa.com](https://api.gluwa.com)

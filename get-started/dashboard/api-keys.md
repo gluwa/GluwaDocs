@@ -23,10 +23,10 @@ description: Acquire API key and secret to use the Gluwa API
 ![API Keys Page on Gluwa Dashboard](../../.gitbook/assets/apikey.png)
 
 {% hint style="danger" %}
-Anyone with your secret API key can make any API call on behalf of your account, such as creating a payment request. You should limit access to your API keys as much as possible. Do not store them in a shared repository such as your version control system.
+Anyone with your API key and secret can make any API call on your behalf, such as creating a payment request. You should limit access to your API key and secret as much as possible. Do not store them in a shared repository such as your version control system.
 {% endhint %}
 
 {% hint style="warning" %}
-**Use only your sandbox API keys for testing and development**. This ensures that you don't accidentally modify your live customers or charges. Refer to [Environments](../../development/environments.md#sandbox-environment-urls) to learn how to use the sandbox mode.
+**Sandbox API keys and Production API keys are different**. This ensures that you don't modify your live customers data or charge them accidentally. Refer to [Environments](../../development/environments.md#sandbox-environment-urls) to learn how to use the sandbox mode.
 {% endhint %}
 

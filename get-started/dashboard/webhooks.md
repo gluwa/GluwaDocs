@@ -1,10 +1,10 @@
 ---
-description: Set up webhook to your wallet and notified
+description: Set up webhook to your wallet and get notified
 ---
 
 # Webhooks
 
-You can receive a webhook notification from Gluwa whenever a transaction associated with your registered Gluwacoin wallet is confirmed on the blockchain.
+You can receive webhook notifications from Gluwa whenever an event associated with your Gluwacoin or Bitcoin wallet is triggered.
 
 ## Get Webhook Secret
 
@@ -14,15 +14,19 @@ You can receive a webhook notification from Gluwa whenever a transaction associa
 
 ![Gluwa Dashboard Webhooks Page](../../.gitbook/assets/screen-shot-2019-09-02-at-12.42.18-am.png)
 
+{% hint style="warning" %}
+**Sandbox API keys and Production API keys are different.** This ensures that you don't modify your live customers data or charge them accidentally. Refer to Environments to learn how to use the sandbox mode.
+{% endhint %}
+
 ## Register Webhook Endpoint
 
 1. Visit the Webhook Management page at [https://dashboard.gluwa.com/webhook](https://dashboard.gluwa.com/webhook).
-2. Register your webhook endpoints on the webhook management page.
-3. Gluwa sends a webhook to the registered URLs.
+2. Click "REGISTER NEW URL" button.
+3. Register your webhook endpoints.
 
 ![Webhook Endpoint Registration Page](../../.gitbook/assets/screen-shot-2019-10-19-at-11.10.45-am.png)
 
-{% hint style="warning" %}
-**Use only your sandbox webhook secret for testing and development**. This ensures that you don't accidentally modify your live customers or charges. Refer to [Environments](../../development/environments.md#sandbox-environment-urls) to learn how to use the sandbox mode.
-{% endhint %}
+After you've registered webhook endpoints, you must whitelist the wallet addresses to receive webhooks.
+
+{% page-ref page="addresses.md" %}
 

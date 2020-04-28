@@ -2,9 +2,13 @@
 
 If your service is developed in .NET, the features we provide are available through the SDK. The Gluwa SDK for .NET is a library with powerful features that enable .NET developers to easily make requests to the Gluwa APIs.
 
+{% hint style="warning" %}
+At the moment, our .NET SDK only supports Gluwacoin transfers. For Bitcoin transfers, please use the REST API.
+{% endhint %}
+
 ## Getting Started
 
-The namespace of Gluwa SDK is [`Gluwa.SDK_dotnet`](https://www.nuget.org/packages/Gluwa.SDK_dotnet/). The SDK requires **.NET Core 2.0** or above.
+The namespace of Gluwa SDK is [`Gluwa.SDK_dotnet`](https://www.nuget.org/packages/Gluwa.SDK_dotnet/). The SDK requires **.NET Core 2.1** or above.
 
 {% embed url="https://www.nuget.org/packages/Gluwa.SDK\_dotnet/" %}
 

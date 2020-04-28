@@ -1,109 +1,45 @@
 ---
-description: Learn about the Fee objects and its endpoints.
+description: Retrieve the minimum fee amount for a transaction.
 ---
 
 # Fee
 
-To learn the recommended fee amount for a transaction, you can retrieve a `Fee` object. A blockchain charges transaction fees for processing  transaction \(e.g., [Bitcoin transaction fee](https://en.wikipedia.org/wiki/Bitcoin#Transaction_fees)\). Though transaction fees are optional, a transaction with higher fee gets processed first. Fee object includes the recommended minimum transaction fee, which is expected to get your transaction processed under a reasonable amount of time.
+A blockchain generally charges an optional fee to process a transaction \(e.g., [Bitcoin transaction fee](https://en.wikipedia.org/wiki/Bitcoin#Transaction_fees)\). This fee is optional, but a transaction with a low fee may not get processed by a blockchain at all. To prevent this, you generally want to pay some amount of fee for the transaction.
 
-## The Fee Object
+For Gluwacoin transactions \(eg&gt; USDG, KRWG, NGNG\), we charge extra fee on top of the market rate to ensure faster transaction. Any transaction with a fee lower than the minimum fee returned by the fee endpoint will be denied.
+
+For Bitcoin transactions, we return the market rate fee. You may use this fee or use something lower, but please note that your transaction may take a while to be processed by the blockchain.
+
+## `GET /v1/:currency/Fee`
+
+Retrieve the minimum fee amount.
+
+### Request
+
+#### Path Parameters
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| **Currency** | `string` | The currency unit of the fee |
-| **MinimumFee** | `string` | The minimum recommended transaction fee  for the currency |
+| currency | `string` | The [currency](all-supported-currencies.md) unit for the fee. |
 
-{% api-method method="get" host="https://api.gluwa.com" path="/v1/:currency/Fee" %}
-{% api-method-summary %}
-Retrieve Transaction Fee Recommendation
-{% endapi-method-summary %}
+### Response
 
-{% api-method-description %}
-Get recommended minimum fee for Bitcoin or Gluwacoin. The fee is dynamically calculated based on the current fee market.
-{% endapi-method-description %}
+| HTTP Status | Return Object |
+| :--- | :--- |
+| 200 | [Fee](fee.md#fee-1) |
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Currency" type="string" required=true %}
-`enum: ["BTC","USDG","KRWG","NGNG"]` Currency of the query
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
+#### Fee
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Fee response
-{% endapi-method-response-example-description %}
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| Currency | `string` | The [currency](all-supported-currencies.md) unit of the fee |
+| MinimumFee | `string` | The minimum transaction fee for the currency |
 
-```javascript
-{
-  "Currency": "string",
-  "MinimumFee": "string"
-}
-```
-{% endapi-method-response-example %}
+### Errors
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-Invalid request
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "InnerErrors": [
-    {
-      "Code": "string",
-      "Path": "string",
-      "Message": "string"
-    }
-  ],
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server error
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "ID": "string (uuid)",
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=503 %}
-{% api-method-response-example-description %}
-Service unavailable for this currency
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "InnerErrors": [
-    {
-      "Code": "string",
-      "Path": "string",
-      "Message": "string"
-    }
-  ],
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-### Transaction
+| HTTP Status | Error Code | Description |
+| :--- | :--- | :--- |
+| 400 | `InvalidUrlParameters` | Invalid URL parameters |
+| 500 | `InternalServerError` | Server error. |
+| 503 | `ServiceUnavailable` | Service unavailable for the specified currency |
 
