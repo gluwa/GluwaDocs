@@ -36,7 +36,7 @@
 
 * [API Reference](api/api.md)
 * [Authorization](api/authentication.md)
-* [All Supported Currencies](api/all-supported-currencies.md)
+* [Currency and Conversion Symbols](api/all-supported-currencies.md)
 * [Errors and Error Codes](api/errors-and-error-codes.md)
 * [Balance](api/balance.md)
 * [Fee](api/fee.md)

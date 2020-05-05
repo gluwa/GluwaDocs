@@ -8,731 +8,233 @@ You can retrieve a `Quote` object before committing for an exchange transaction.
 
 You can create, accept, and retrieve exchange quotes with Gluwa API.
 
-## The Quote Object
+## `POST /v1/Quote`
+
+Get Quote for currency exchange
+
+### Request
+
+#### Request Body
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| **Conversion** | `string`  | Conversion for the exchange, from source currency to exchanged currency.  For example,`"UsdgKrwg"` for converting USD-G to KRW-G and `"KrwgUsdg"` for converting KRW-G to USDG. |
-| **TotalSourceAmount** | `string` | Total amount of source currency that will be exchanged. |
-| **TotalFee** | `string` | Total fee amount in source currency. |
-| **TotalEstimatedExchangedAmount** | `string` | Total amount in exchanged currency that the user is estimated to receive. |
-| **AveragePrice** | `string` | Price per source currency for the whole quote. |
-| **BestPrice** | `string` | Price per source currency from the order that offered the best price. Currently, this is the same as AveragePrice field. |
-| **WorstPrice** | `string` | Price per source currency from the order that offered the worst price. Currently, this is the same as AveragePrice field. |
-| **MatchedOrders** | `array` | `array<MatchedOrder>` List of orders that are matched to the quote. |
-| **CreatedDateTime** | `string` | Time when the quote is created. |
-| **TimeToLive** | `integer` | Amount of time in seconds in which the quote is valid, from the time when the quote is created. |
-| **Checksum** | `string` | The checksum for the quote. The user must include this Checksum when they accept the quote in their request. |
+| Amount | `string` | The amount in source currency you want to exchange. |
+| Conversion | `string` | Conversion symbol for the exchange. See [conversion](all-supported-currencies.md#conversion-symbols). |
+| BtcPublicKey | `string` | _**Optional.**_ Required if the source currency is `BTC`. This is BTC public key of the sending address that will be used to reserve your funds. |
 
-{% code title="Example" %}
-```javascript
-{
-  "Conversion": "string",
-  "TotalSourceAmount": "string",
-  "TotalFee": "string",
-  "TotalEstimatedExchangedAmount": "string",
-  "AveragePrice": "string",
-  "BestPrice": "string",
-  "WorstPrice": "string",
-  "MatchedOrders": [
-    {
-      "OrderID": "string (uuid)",
-      "DestinationAddress": "string",
-      "SourceAmount": "string",
-      "Fee": "string",
-      "ExchangedAmount": "string",
-      "Price": "string",
-      "Executor": "string"
-    }
-  ],
-  "CreatedDateTime": "string (date-time)",
-  "TimeToLive": "integer (int64)",
-  "Checksum": "string"
-}
-```
-{% endcode %}
+### Response
 
-## The Matched Order Object
+| HTTP Status | Return Object |
+| :--- | :--- |
+| 200 | [Quote](quote.md#quote). |
+
+#### Quote
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| **OrderID** | `string` | ID of the order. |
-| **DestinationAddress** | `string` | Address where the user's source currency will be sent to. |
-| **SourceAmount** | `string` | Amount in source currency that this order will fulfill. |
-| **Fee** | `string` | Fee amount in source currency. |
-| **ExchangedAmount** | `string` | Amount in exchanged currency that this order will provide. |
-| **Price** | `string` | Price per source currency. |
-| **Executor** | `string` | Gluwa address that will execute the exchange on the user's behalf. You will need this to sign the reserve transaction signature when you accept the quote. |
+| Conversion | `string` | The [conversion](all-supported-currencies.md#conversion-symbols) of the exchange. |
+| TotalSourceAmount | `string` | The total amount in source currency that will be exchanged. |
+| TotalFee | `string` | The exchange fee. |
+| TotalEstimatedExchangedAmount | `string` | The total estimated exchanged amount in exchanged currency. |
+| AveragePrice | `string` | The average of all the prices in the list of matched orders. The unit is `<exchanged currency>/<source currency>`. |
+| BestPrice | `string` | The best price available in the list of matched orders. The unit is `<exchanged currency>/<source currency>`. |
+| WorstPrice | `string` | The best price available in the list of matched orders. The unit is `<exchanged currency>/<source currency>`. |
+| MatchedOrders | `array of` [`MatchedOrder`](quote.md#matchedorder)\`\` | The list of matched orders available to fulfill the requested source amount.  |
+| CreatedDateTime | `DateTime` | The time when the quote is created. |
+| TimeToLive | `int` | The duration in seconds that the quote is valid. |
+| Checksum | `string` | Checksum. Used when you accept the quote. |
 
-{% code title="Example" %}
-```javascript
-{
-  "OrderID": "string (uuid)",
-  "DestinationAddress": "string",
-  "SourceAmount": "string",
-  "Fee": "string",
-  "ExchangedAmount": "string",
-  "Price": "string",
-  "Executor": "string"
-}
-```
-{% endcode %}
-
-## The Accept Quote Object
+#### MatchedOrder
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| **Conversion** | `string` | Conversion for the exchange, from source currency to exchanged currency. `"UsdgKrwg"` for converting USD-G to KRW-G and `"KrwgUsdg"` for converting KRW-G to USDG. |
-| **MatchedOrders** | `array` | `array<AcceptQuoteMatchedOrder>` List of orders that are matched to the quote. |
-| **CreatedDateTime** | `string` | Time when the quote is created. This is provided by the API when the quote is created. |
-| **TimeToLive** | `integer` | Amount of time in seconds in which the quote is valid, from the time when the quote is created. This is provided by the API when the quote is created. |
-| **Checksum** | `string` | The checksum for the quote. The user must include this Checksum when they accept the quote in their request. |
-| **ReceivingAddress** | `string` | The user's address that will receive the exchanged currency. |
-| **ReceivingAddressSignature** | `string` | Signature of the receiving address. Must be the same format as X-REQUEST-SIGNATURE header. |
+| OrderID | `UUID` | Order ID |
+| DestinationAddress | `string` | The address where the source amount must be sent to. |
+| SourceAmount | `string` | The amount in source currency that this order will exchange. |
+| Fee | `string` | The fee amount in source currency for this order. |
+| ExchangedAmount | `string` | The amount in exchanged currency that this order will fulfill. |
+| Price | `string` | The price this order is offering for the exchange. The unit is `<exchanged currency>/<source currency>`. |
+| Executor | `string` | _**Optional.**_ Required if the source currency is Gluwacoin currency \(ex&gt; `USD-G`, `KRW-G`\). The address that will execute the exchange on your behalf. You need this to sign the reserve transaction signature. |
+| ReservedFundsAddress | `string` | _**Optional.**_ Required if the source currency is `BTC`. The address where the source amount must be sent to to reserve your funds for the exchange. |
+| ReservedFundsRedeemScript | `string` | _**Optional.**_ Required if the source currency is `BTC`.  |
 
-{% code title="Example" %}
-```javascript
-{
-  "Conversion": "string",
-  "MatchedOrders": [
-    {
-      "OrderID": "string (uuid)",
-      "SendingAddress": "string",
-      "DestinationAddress": "string",
-      "SourceAmount": "string",
-      "ExchangedAmount": "string",
-      "Price": "string",
-      "Fee": "string",
-      "Nonce": "string",
-      "ExpiryBlockNumber": "string",
-      "Executor": "string",
-      "Signature": "string"
-    }
-  ],
-  "CreatedDateTime": "string (date-time)",
-  "TimeToLive": "integer (int64)",
-  "Checksum": "string",
-  "ReceivingAddress": "string",
-  "ReceivingAddressSignature": "string"
-}
-```
-{% endcode %}
+### Errors
 
-## The Accept Quote Matched Order object
+| HTTP Status | Error Code | Description |
+| :--- | :--- | :--- |
+| 400 | `InvalidUrlParameters` | Invalid URL parameters |
+| 400 | `MissingBody` | Request body is missing. |
+| 400 | `InvalidBody` | Request validation errors. See InnerErrors. |
+| 400 | `ValidationError` | Request validation errors. See InnerErrors. |
+| 404 | `NotFound` | No orders are matched. |
+| 500 | `InternalServerError` | Server error. |
+
+## `PUT /v1/Quote`
+
+Accept quote received from `POST /v1/Quote` endpoint.
+
+### Request
+
+#### Request Body
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| **OrderID** | `string` | ID of the order that was matched. |
-| **SendingAddress** | `string` | Address that the user's source currency will be sent from. |
-| **DestinationAddress** | `string` | Address that the user's source currency will be sent to. |
-| **SourceAmount** | `string` | Amount in source currency that the user will send for this order. |
-| **ExchangedAmount** | `string` | Amount in exchanged currency that the user will receive from this order. |
-| **Price** | `string` | Price per source currency. |
-| **Fee** | `string` | Fee amount in source currency. |
-| **Nonce** | `string` | Nonce for the reserve function. |
-| **ExpiryBlockNumber** | `string` | Block number at which the reserve function will expire. |
-| **Executor** | `string` | Gluwa address that will execute the exchange on the user's behalf. |
-| **Signature** | `string` | Signature of the reserve function. |
-
-{% code title="Example" %}
-```javascript
-{
-  "OrderID": "string (uuid)",
-  "SendingAddress": "string",
-  "DestinationAddress": "string",
-  "SourceAmount": "string",
-  "ExchangedAmount": "string",
-  "Price": "string",
-  "Fee": "string",
-  "Nonce": "string",
-  "ExpiryBlockNumber": "string",
-  "Executor": "string",
-  "Signature": "string"
-}
-```
-{% endcode %}
-
-{% api-method method="post" host="https://api.gluwa.com" path="/v1/Quote" %}
-{% api-method-summary %}
-Create Pending Quote
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Create a new quote for your anticipated exchange.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Content-Types" type="string" required=true %}
-application/json-patch+json, application/json, application/\*+json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-body-parameters %}
-{% api-method-parameter name="Amount" type="string" required=true %}
-Amount in source currency.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="Conversion" type="string" required=true %}
-Conversion for the exchange, from source currency to exchanged currency. `"UsdgKrwg"` for converting USD-G to KRW-G and `"KrwgUsdg"` for converting KRW-G to USDG.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Newly generated quote
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "Conversion": "string",
-  "TotalSourceAmount": "string",
-  "TotalFee": "string",
-  "TotalEstimatedExchangedAmount": "string",
-  "AveragePrice": "string",
-  "BestPrice": "string",
-  "WorstPrice": "string",
-  "MatchedOrders": [
-    {
-      "OrderID": "string (uuid)",
-      "DestinationAddress": "string",
-      "SourceAmount": "string",
-      "Fee": "string",
-      "ExchangedAmount": "string",
-      "Price": "string",
-      "Executor": "string"
-    }
-  ],
-  "CreatedDateTime": "string (date-time)",
-  "TimeToLive": "integer (int64)",
-  "Checksum": "string"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-{% tabs %}
-{% tab title="RequestValidationWithBodyError" %}
-```javascript
-// Invalid request body
-{
-  "InnerErrors": [
-    {
-      "Code": "string",
-      "Path": "string",
-      "Message": "string"
-    }
-  ],
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endtab %}
-
-{% tab title="ValidationError\[ECreateQuoteError\]" %}
-```javascript
-// Validation error. See inner errors for more details
-{
-  "InnerErrors": [
-    {
-      "Code": "string",
-      "Path": "string",
-      "Message": "string"
-    }
-  ],
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endtab %}
-{% endtabs %}
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-No matching orders available
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server error
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "ID": "string (uuid)",
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% code title="Request Example" %}
-```javascript
-{
-  "Amount": "string",
-  "Conversion": "string"
-}
-```
-{% endcode %}
-
-{% api-method method="put" host="https://api.gluwa.com" path="/v1/Quote" %}
-{% api-method-summary %}
-Accept Pending Quote
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Accept the pending quote that has been provided by the GetPendingQuote endpoint.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Content-Types" type="string" required=true %}
-application/json-patch+json, application/json, application/\*+json
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-body-parameters %}
-{% api-method-parameter name="Conversion" type="string" required=true %}
-Conversion for the exchange, from source currency to exchanged currency. `"UsdgKrwg"` for converting USD-G to KRW-G and `"KrwgUsdg"` for converting KRW-G to USDG.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="MatchedOrders" type="array" required=true %}
-List of orders that are matched to the quote. See Accept Quote Matched Order object.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="CreatedDateTime" type="string" required=true %}
-Time when the quote is created. This is provided by the API when the quote is created.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="TimeToLive" type="integer" required=true %}
-Amount of time in seconds in which the quote is valid, from the time when the quote is created. This is provided by the API when the quote is created.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="ReceivingAddress" type="string" required=true %}
-The user's address that will receive the exchanged currency.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="ReceivingAddressSignature" type="string" required=true %}
-Signature of the receiving address. Must be the same format as X-REQUEST-SIGNATURE header.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=202 %}
-{% api-method-response-example-description %}
-Quote is accepted
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "ID": "string (uuid)"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-Invalid request
-{% endapi-method-response-example-description %}
-
-{% tabs %}
-{% tab title="RequestValidationWithBodyError" %}
-```javascript
-// Invalid request body.
-{
-  "InnerErrors": [
-    {
-      "Code": "string",
-      "Path": "string",
-      "Message": "string"
-    }
-  ],
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endtab %}
-
-{% tab title="ValidationError\[EAcceptQuoteError\]" %}
-```javascript
-// Validation error. See inner errors for more details.
-{
-  "InnerErrors": [
-    {
-      "Code": "string",
-      "Path": "string",
-      "Message": "string"
-    }
-  ],
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endtab %}
-{% endtabs %}
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-Order is not found or not available.
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server error
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "ID": "string (uuid)",
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% code title="Request Example" %}
-```javascript
-{
-  "Conversion": "string",
-  "MatchedOrders": [
-    {
-      "OrderID": "string (uuid)",
-      "SendingAddress": "string",
-      "DestinationAddress": "string",
-      "SourceAmount": "string",
-      "ExchangedAmount": "string",
-      "Price": "string",
-      "Fee": "string",
-      "Nonce": "string",
-      "ExpiryBlockNumber": "string",
-      "Executor": "string",
-      "Signature": "string"
-    }
-  ],
-  "CreatedDateTime": "string (date-time)",
-  "TimeToLive": "integer (int64)",
-  "Checksum": "string",
-  "ReceivingAddress": "string",
-  "ReceivingAddressSignature": "string"
-}
-```
-{% endcode %}
-
-{% api-method method="get" host="https://api.gluwa.com" path="/V1/:currency/Addresses/:address/Quotes" %}
-{% api-method-summary %}
-Retrieve List of Quotes
-{% endapi-method-summary %}
-
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="currency" type="string" required=true %}
-Currency type. \[USDG, KRWG\]
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="address" type="string" required=true %}
-User's public address.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Content-Types" type="string" required=true %}
-application/json-patch+json, application/json, text/json, application/\*+json
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="X-REQUEST-SIGNATURE" type="string" required=true %}
-Base64 encoding string of {unixtimestamp}.{signature}
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-query-parameters %}
-{% api-method-parameter name="startDateTime" type="string" required=false %}
-If defined, only quotes created after this datetime are included in the response. Datetime must be in ISO 8601 format.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="endDateTime" type="string" required=false %}
-If defined, only quotes created before this datetime are included in the response. Datetime must be in ISO 8601 format.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="status" type="string" required=false %}
-Status of the quote. Defaults to Pending. \[Pending, Processed\]
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="offset" type="integer" required=false %}
-Number of quotes to skip the beginning of list. Used for pagination. Defaults to 0.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="limit" type="integer" required=false %}
-Number of quotes to include in the result. Defaults to 25, maximum of 100.
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Success
-{% endapi-method-response-example-description %}
-
-```javascript
-[
-  {
-    "ID": "string (uuid)",
-    "SendingAddress": "string",
-    "SourceAmount": "string",
-    "Fee": "string",
-    "EstimatedExchangedAmount": "string",
-    "WeightedAveragePrice": "string",
-    "BestPrice": "string",
-    "WorstPrice": "string",
-    "ReceivingAddress": "string",
-    "Status": "string",
-    "Conversion": "string"
-  }
-]
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-{% tabs %}
-{% tab title="RequestValidationWithoutBodyError" %}
-```javascript
-// Request validation without body error. See inner errors for more details.
-{
-  "InnerErrors": [
-    {
-      "Code": "string",
-      "Path": "string",
-      "Message": "string"
-    }
-  ],
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endtab %}
-
-{% tab title="AddressSignatureValidationError" %}
-```javascript
-// Address signature validation error. See inner errors for more details.
-{
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endtab %}
-{% endtabs %}
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "ID": "string (uuid)",
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="get" host="https://api.gluwa.com" path="/V1/Quotes/:ID" %}
-{% api-method-summary %}
-Retrieve Quote with ID
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Get a quote with specified ID
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="ID" type="string" required=true %}
-The ID of a quote.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Content-Types" type="string" required=true %}
-application/json-patch+json, application/json, text/json, application/\*+json
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="X-REQUEST-SIGNATURE" type="string" required=true %}
-Base64 encoding string of {unixtimestamp}.{signature}
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-The quote with a specified ID.
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "SendingAddress": "string",
-  "SourceAmount": "string",
-  "Fee": "string",
-  "EstimatedExchangedAmount": "string",
-  "ReceivingAddress": "string",
-  "Status": "string",
-  "Conversion": "string",
-  "MatchedOrders": [
-    {
-      "SourceAmount": "string",
-      "Fee": "string",
-      "Status": "string",
-      "ExchangedAmount": "string",
-      "Price": "string"
-    }
-  ]
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-Invalid request.
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "InnerErrors": [
-    {
-      "Code": "string",
-      "Path": "string",
-      "Message": "string"
-    }
-  ],
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-Access to this quote is denied.
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "InnerErrors": [
-    {
-      "Code": "string",
-      "Path": "string",
-      "Message": "string"
-    }
-  ],
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-Quote is not found.
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=500 %}
-{% api-method-response-example-description %}
-Server error.
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+| MatchedOrders | array of [MatchedOrder](quote.md#matchedorder-1) | All orders that will fulfill this quote. |
+| SendingAddress | `string` | The address that will fund the source amount. |
+| ReceivingAddress | `string` | The address that the exchanged currency will be received. |
+| ReceivingAddressSignature | `string` | The signature of the receiving address. Generated the same way as [X-REQUEST-SIGNATURE](authentication.md#x-request-signature). |
+| Checksum | `string` | Checksum that was received when quote was created. |
+
+#### MatchedOrder
+
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| OrderID | `UUID` | ID of the order that was matched |
+| ReserveTxnSignature | `string` | Reserve transaction signature used to reserve funds for the exchange. |
+| Nonce | `string` | _**Optional**_. Required if the source currency is Gluwacoin currency \(ex&gt; `USD-G`, `KRW-G`\). Nonce is an integer used when creating reserve transaction signature. It must increase each time you make any new transactions \(transfer, exchange, etc\). |
+| ExpiryBlockNumber | `string` | _**Optional.**_ Required if the source currency is Gluwacoin currency \(ex&gt; `USD-G`, `KRW-G`\). The block number where your reserved funds will expire. After this block number, the exchange will not execute, and you may call reclaim function on the blockchain to release your reserved funds. |
+| ExecuteTxnSignature | `string` | _**Optional.**_ Required if the source currency `BTC`. Execute transaction signature used to execute the exchange when your funds are available in the reserve address. |
+| ReclaimTxnSignature | `string` | _**Optional.**_ Required if the source currency `BTC`. Reclaim transaction signature used to return the funds in the reserve address when the exchange fails or expires. |
+
+### Response
+
+| HTTP Status | Return Object |
+| :--- | :--- |
+| 202 | [AcceptedQuoteID](quote.md#acceptedquoteid). |
+
+#### AcceptedQuoteID
+
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| ID | `UUID` | The ID of the accepted quote. |
+
+### Errors
+
+| HTTP Status | Error Code | Description |
+| :--- | :--- | :--- |
+| 400 | `InvalidUrlParameters` | Invalid URL parameters |
+| 400 | `MissingBody` | Request body is missing. |
+| 400 | `InvalidBody` | Request validation errors. See InnerErrors. |
+| 400 | `ValidationError` | Request validation errors. See InnerErrors. |
+| 403 | `Forbidden` | Invalid checksum. Checksum may be wrong or expired. |
+| 404 | `NotFound` | One of the matched orders are no longer available. |
+| 500 | `InternalServerError` | Server error. |
+
+## `GET /v1/:currency/Addresses/:address/Quotes`
+
+Get a list of accepted quotes.
+
+### Request
+
+#### Headers
+
+| Header | Type | Description |
+| :--- | :--- | :--- |
+| X-REQUEST-SIGNATURE | `string` | Address Signature of the sending address. See [X-REQUEST-SIGNATURE](authentication.md#x-request-signature). |
+
+#### Path Parameters
+
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| currency | `string` | The source [currency](all-supported-currencies.md#conversion-symbols) of the quote. |
+| address | `string` | The sending address of the quote. |
+
+#### Query Parameters
+
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| startDateTime | `datetime` | ISO 8601 format datetime. If defined, only quotes created after this datetime are included in the response. |
+| endDateTime | `datetime` | ISO 8601 format datetime. If defined, only quotes created before this datetime are included in the response. |
+| status | `string` | `Pending` or `Processed`. |
+| offset | `int` | Number of quotes to skip the beginning of list. Defaults to 0. |
+| limit | `int` | Number of quotes to include in the result. Defaults to 25, maximum of 100. |
+
+### Response
+
+| HTTP Status | Return Object |
+| :--- | :--- |
+| 200 | array of [Quotes](quote.md#quote-1). |
+
+#### Quote
+
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| ID | `UUID` | Accepted quote ID. |
+| SendingAddress | `string` | The address that funded the source amount. |
+| SourceAmount | `string` | The total amount  |
+| Fee | `string` | Fee of the exchange |
+| EstimatedExchangedAmount | `string` | The estimated exchange amount. Sometimes, if someone takes the order before you, the exchange will not be executed. |
+| AveragePrice | `string` | The average of all the prices in the list of matched orders. The unit is `<exchanged currency>/<source currency>`. |
+| BestPrice | `string` | The best price available in the list of matched orders. The unit is `<exchanged currency>/<source currency>`. |
+| WorstPrice | `string` | The best price available in the list of matched orders. The unit is `<exchanged currency>/<source currency>`. |
+| ReceivingAddress | `string` | The address that the exchanged currency is received. |
+| Status | `string` | `Pending` or `Processed`. |
+| Conversion | `string` | The conversion of the quote. See [conversion](all-supported-currencies.md#conversion-symbols). |
+
+### Errors
+
+| HTTP Status | Error Code | Description |
+| :--- | :--- | :--- |
+| 400 | `InvalidUrlParameters` | Invalid URL parameters |
+| 403 | `SignatureMissing` | `X-REQUEST-SIGNATURE` header is missing. |
+| 403 | `SignatureExpired` | `X-REQUEST-SIGNATURE` has expired. |
+| 403 | `InvalidSignature` | Invalid `X-REQUEST-SIGNATURE`. |
+| 500 | `InternalServerError` | Server error. |
+
+## `GET /V1/Quotes/:ID`
+
+Get an accepted quote with ID.
+
+### Request
+
+#### Headers
+
+| Header | Type | Description |
+| :--- | :--- | :--- |
+| X-REQUEST-SIGNATURE | `string` | Address Signature of the sending address of this quote. See [X-REQUEST-SIGNATURE](authentication.md#x-request-signature). |
+
+#### Path Parameters
+
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| ID | `UUID` | ID of the accepted quote. |
+
+### Response
+
+| HTTP Status | Return Object |
+| :--- | :--- |
+| 200 | [Quote](quote.md#quote-1). |
+
+#### Quote
+
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| SendingAddress | `string` | The address that funded the source amount. |
+| SourceAmount | `string` | The total source amount. |
+| Fee | `string` | Fee of the exchange. |
+| EstimatedExchangedAmount | `string` | The estimated exchange amount. Sometimes, if someone takes the order before you, the exchange will not be executed. |
+| ReceivingAddress | `string` | The address that the exchanged currency is received. |
+| Status | `string` | `Pending` or `Processed`. |
+| Conversion | `string` | The conversion of the quote. See [conversion](all-supported-currencies.md#conversion-symbols). |
+| MatchedOrders | `array of` [`MatchedOrders`](quote.md#matchedorder-2)\`\` | The list of matched orders that fulfilled the source amount.  |
+
+#### MatchedOrder
+
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| SourceAmount | `string` | The amount in source currency that this order will exchange. |
+| Fee | `string` | The fee amount in source currency for this order. |
+| Status | `string` | `Pending`, `Success` or `Failed`. |
+| Price | `string` | The price this order is offering for the exchange. The unit is `<exchanged currency>/<source currency>`. |
+
+### Errors
+
+| HTTP Status | Error Code | Description |
+| :--- | :--- | :--- |
+| 400 | `InvalidUrlParameters` | Invalid URL parameters |
+| 403 | `SignatureMissing` | `X-REQUEST-SIGNATURE` header is missing. |
+| 403 | `SignatureExpired` | `X-REQUEST-SIGNATURE` has expired. |
+| 403 | `InvalidSignature` | Invalid `X-REQUEST-SIGNATURE`. |
+| 404 | `NotFound` | Quote not found. |
+| 500 | `InternalServerError` | Server error. |
 

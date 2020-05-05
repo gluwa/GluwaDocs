@@ -1,84 +1,33 @@
 # Order Book
 
-## The Order Book List Item Object
+## `GET v1/OrderBook/:conversion`
+
+Get current order book.
+
+### Request
+
+#### Path Parameters
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| **Amount** | `string` | Amount of available source currency. |
-| **Price** | `string` | Price per source currency. |
+| conversion | `string` | Conversion symbol. See [conversion](all-supported-currencies.md#conversion-symbols). |
 
-{% code title="Example" %}
-```javascript
-{
-  "Amount": "string",
-  "Price": "string"
-}
-```
-{% endcode %}
+### Response
 
+| HTTP Status | Return Object |
+| :--- | :--- |
+| 200 | array of [Orders](order-book.md#order). |
 
+#### Order
 
-{% api-method method="get" host="https://api.gluwa.com" path="/V1/OrderBook/:conversion" %}
-{% api-method-summary %}
-Retrieve Order Book
-{% endapi-method-summary %}
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| Amount | `string` | Amount of available in the order. |
+| Price | `string` | Price. The unit is `<exchanged currency>/<source currency>`. |
 
-{% api-method-description %}
-Get current order book.
-{% endapi-method-description %}
+### Errors
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="conversion" type="string" required=true %}
-`enum ["UsdgKrwg", "KrwgUsdg"]` Conversion of the exchange. `"UsdgKrwg"` = USDG -&gt; KRWG, `"KrwgUsdg"` = KRWG -&gt; USDG
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
-{% api-method-query-parameters %}
-{% api-method-parameter name="limit" type="integer" required=false %}
-`int32` Number of orders to include in the result. Ordered by descending price \(best price first\). Defaults to `100`, maximum of `1000`.
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-List of active orders
-{% endapi-method-response-example-description %}
-
-```javascript
-[
-  {
-    "Amount": "string",
-    "Price": "string"
-  }
-]
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-Invalid request parameters
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-  "InnerErrors": [
-    {
-      "Code": "string",
-      "Path": "string",
-      "Message": "string"
-    }
-  ],
-  "Code": "string",
-  "Message": "string",
-  "ExtraData": "string"
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+| HTTP Status | Error Code | Description |
+| :--- | :--- | :--- |
+| 400 | `InvalidUrlParameters` | Invalid URL parameters |
 

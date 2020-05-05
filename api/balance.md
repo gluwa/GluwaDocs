@@ -14,7 +14,7 @@ Retrieve the current balance of an address.
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| currency | `string` | The [currency](all-supported-currencies.md) unit of the balance |
+| currency | `string` | The [currency](all-supported-currencies.md#currency-symbols) unit of the balance |
 | address | `string` | A string representing how much balance in the currency unit \(e.g., `"1.23"` for 1.23 USD-G\). |
 
 #### Query Parameters
@@ -34,7 +34,7 @@ Retrieve the current balance of an address.
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
 | Balance | `string` | A string representing how much balance in the currency unit \(e.g., `"1.23"` for 1.23 USD-G\). |
-| Currency | `string` | The [currency](all-supported-currencies.md) unit of the balance |
+| Currency | `string` | The [currency](all-supported-currencies.md#currency-symbols) unit of the balance |
 | UnspentOutputs | `array of` [`UnspentOutput`](balance.md#unspentoutput)\`\` | Unspent transaction outputs of the address. Available only for BTC addresses and if`includeUnspentOutputs` is set to `true`. |
 
 #### UnspentOutput

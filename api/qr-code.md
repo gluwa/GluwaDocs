@@ -28,7 +28,7 @@ Retrieve QR Code for a payment.
 | :--- | :--- | :--- |
 | Target | `string` | The address of the payment receiver. |
 | Signature | `string` | Address Signature of the `Target` value, generate in the same way as [X-REQUEST-SIGNATURE](authentication.md#x-request-signature). |
-| Currency | `string` | The [currency](all-supported-currencies.md) of the payment. Not supported for `BTC`. |
+| Currency | `string` | The [currency](all-supported-currencies.md#currency-symbols) of the payment. Not supported for `BTC`. |
 | Amount | `string` | Payment amount. |
 | MerchantOrderID | `string` | _**Optional.**_ A string value attached to the payment which can be used for traceability between Gluwa and your application. |
 | Note | `string` | _**Optional.**_ Optional memo attached to the transaction. |

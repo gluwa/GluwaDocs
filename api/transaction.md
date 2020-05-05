@@ -20,7 +20,7 @@ Get transaction history for a given address.
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| currency | `string` | The [currency](all-supported-currencies.md) of the transactions. |
+| currency | `string` | The [currency](all-supported-currencies.md#currency-symbols) of the transactions. |
 | address | `string` | The public address associated with the transactions. |
 
 #### Query Parameters
@@ -109,7 +109,8 @@ Get transaction history for a given address.
       <td style="text-align:left">Currency</td>
       <td style="text-align:left"><code>string</code>
       </td>
-      <td style="text-align:left">The <a href="all-supported-currencies.md">currency</a> of the transaction</td>
+      <td style="text-align:left">The <a href="all-supported-currencies.md#currency-symbols">currency</a> of
+        the transaction</td>
     </tr>
     <tr>
       <td style="text-align:left">Sources</td>
@@ -188,7 +189,7 @@ Get transaction history for a given address.
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| currency | `string` | The [currency](all-supported-currencies.md) of the transaction. |
+| currency | `string` | The [currency](all-supported-currencies.md#currency-symbols) of the transaction. |
 | txnhash | `string` | Blockchain transaction hash. |
 
 ### Response
@@ -221,10 +222,10 @@ Get transaction history for a given address.
 | Signature | `string` | Transaction signed with the sender's private key. See [Creating Transaction Signatures](../development/todo-creating-transaction-signatures.md#transaction-signature). |
 | Amount | `string` | Transaction amount, not including the fee. This is the amount that the receiver receives. |
 | Fee | `string` | Transaction fee amount. Generally, you should use the amount from the [Fee endpoint](fee.md#get-v-1-currency-fee). Your transaction may not get processed by Gluwa if the fee amount is smaller than the minimum fee amount. |
-| Currency | `string` | The [currency](all-supported-currencies.md) of the transaction. |
+| Currency | `string` | The [currency](all-supported-currencies.md#currency-symbols) of the transaction. |
 | Source | `string` | Address of the sender. |
 | Target | `string` | Address of the receiver. |
-| Nonce | `string` | _**Optional.**_ Required if using Gluwacoin as the currency of the transaction. Nonce is an integer used when creating `Signature`. It must increase each time you make a transaction. |
+| Nonce | `string` | _**Optional.**_ Required if using Gluwacoin as the currency of the transaction. Nonce is an integer used when creating reserve transaction signature. It must increase each time you make any new transactions \(transfer, exchange, etc\). |
 | MerchantOrderID | `string` | _**Optional.**_ A string value attached to the transaction which can be used for traceability between Gluwa and your application. |
 | Note | `string` | _**Optional.**_ Optional memo attached to the transaction. |
 | Idem | `UUID` | _**Optional.**_ Used for idempotent requests. See [Idempotent Requests](../development/todo-idempotent-requests.md). |
