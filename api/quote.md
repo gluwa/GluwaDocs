@@ -209,6 +209,7 @@ Get an accepted quote with ID.
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
+| ID | `UUID` | Accepted quote ID. |
 | SendingAddress | `string` | The address that funded the source amount. |
 | SourceAmount | `string` | The total source amount. |
 | Fee | `string` | Fee of the exchange. |
