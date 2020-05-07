@@ -46,19 +46,90 @@ Get Quote for currency exchange
 
 #### MatchedOrder
 
-| Attribute | Type | Description |
-| :--- | :--- | :--- |
-| OrderID | `UUID` | Order ID |
-| DestinationAddress | `string` | The address where the source amount must be sent to. |
-| SourceAmount | `string` | The amount in source currency that this order will exchange. |
-| Fee | `string` | The fee amount in source currency for this order. |
-| ExchangedAmount | `string` | The amount in exchanged currency that this order will fulfill. |
-| Price | `string` | The price this order is offering for the exchange. The unit is `<exchanged currency>/<source currency>`. |
-| Executor | `string` | _**Optional.**_ Required if the source currency is Gluwacoin currency \(ex&gt; `USD-G`, `KRW-G`\). The address that will execute the exchange on your behalf. You need this to sign the reserve transaction signature. |
-| ReservedFundsAddress | `string` | _**Optional.**_ Required if the source currency is `BTC`. The address where the source amount must be sent to to reserve your funds for the exchange. |
-| ReservedFundsRedeemScript | `string` | _**Optional.**_ Required if the source currency is `BTC`.  |
-
-### Errors
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Attribute</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">OrderID</td>
+      <td style="text-align:left"><code>UUID</code>
+      </td>
+      <td style="text-align:left">Order ID</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">DestinationAddress</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">The address where the source amount must be sent to.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">SourceAmount</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">The amount in source currency that this order will exchange.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Fee</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">The fee amount in source currency for this order.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">ExchangedAmount</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">The amount in exchanged currency that this order will fulfill.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Price</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">The price this order is offering for the exchange. The unit is <code>&lt;exchanged currency&gt;/&lt;source currency&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">ExpiryBlockNumber</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">
+        <p><em><b>Optional. </b></em>Required if the source currency is Gluwacoin
+          currency (ex&gt; <code>USD-G</code>, <code>KRW-G</code>). The block number
+          where your reserved funds will expire. You need this to create the reserve
+          transaction signature.</p>
+        <p></p>
+        <p>After this block number, the exchange will not execute, and you may call
+          reclaim function on the blockchain to release your reserved funds.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Executor</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left"><em><b>Optional.</b></em> Required if the source currency is Gluwacoin
+        currency (ex&gt; <code>USD-G</code>, <code>KRW-G</code>). The address that
+        will execute the exchange on your behalf. You need this to sign the reserve
+        transaction signature.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">ReservedFundsAddress</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left"><em><b>Optional.</b></em> Required if the source currency is <code>BTC</code>.
+        The address where the source amount must be sent to to reserve your funds
+        for the exchange.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">ReservedFundsRedeemScript</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left"><em><b>Optional.</b></em> Required if the source currency is <code>BTC</code>.</td>
+    </tr>
+  </tbody>
+</table>### Errors
 
 | HTTP Status | Error Code | Description |
 | :--- | :--- | :--- |
@@ -92,7 +163,6 @@ Accept quote received from `POST /v1/Quote` endpoint.
 | OrderID | `UUID` | ID of the order that was matched |
 | ReserveTxnSignature | `string` | Reserve transaction signature used to reserve funds for the exchange. |
 | Nonce | `string` | _**Optional**_. Required if the source currency is Gluwacoin currency \(ex&gt; `USD-G`, `KRW-G`\). Nonce is an integer used when creating reserve transaction signature. It must increase each time you make any new transactions \(transfer, exchange, etc\). |
-| ExpiryBlockNumber | `string` | _**Optional.**_ Required if the source currency is Gluwacoin currency \(ex&gt; `USD-G`, `KRW-G`\). The block number where your reserved funds will expire. After this block number, the exchange will not execute, and you may call reclaim function on the blockchain to release your reserved funds. |
 | ExecuteTxnSignature | `string` | _**Optional.**_ Required if the source currency `BTC`. Execute transaction signature used to execute the exchange when your funds are available in the reserve address. |
 | ReclaimTxnSignature | `string` | _**Optional.**_ Required if the source currency `BTC`. Reclaim transaction signature used to return the funds in the reserve address when the exchange fails or expires. |
 
