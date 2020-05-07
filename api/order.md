@@ -184,7 +184,7 @@ Cancel an order.
 
 | HTTP Status | Return Object |
 | :--- | :--- |
-| 200 | none |
+| 200 | none. If the order is already canceled, it will have no effect and return 200. |
 
 ### Errors
 
