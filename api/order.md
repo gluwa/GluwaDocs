@@ -92,7 +92,7 @@ Retrieve an order with specified ID.
 | SendingAddress | `string` | The address where the source amount is sent from. |
 | ReceivingAddress | `string` | The address where the exchanged amount is received. |
 | SourceAmount | `string` | The amount in source currency to be exchanged. |
-| Fee | `string` | Fee paid for the exchange. |
+| Fee | `string` | The total fee paid for the exchange. |
 | ExchangedAmount | `string` | The amount in exchanged currency you received. |
 | Price | `string` | The price used for this exchange. The unit is `<exchanged currency>/<source currency>`. |
 | Status | `string` | `Pending`, `Success` or `Failed`. |

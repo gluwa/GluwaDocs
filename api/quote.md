@@ -77,7 +77,7 @@ Get Quote for currency exchange
       <td style="text-align:left">Fee</td>
       <td style="text-align:left"><code>string</code>
       </td>
-      <td style="text-align:left">The fee amount in source currency for this order.</td>
+      <td style="text-align:left">The fee amount in source currency per for this order.</td>
     </tr>
     <tr>
       <td style="text-align:left">ExchangedAmount</td>
@@ -270,7 +270,7 @@ Get a list of accepted quotes.
 | ID | `UUID` | Accepted quote ID. |
 | SendingAddress | `string` | The address that funded the source amount. |
 | SourceAmount | `string` | The total amount  |
-| Fee | `string` | Fee of the exchange |
+| Fee | `string` | The total fee of the exchange |
 | EstimatedExchangedAmount | `string` | The estimated exchange amount. Sometimes, if someone takes the order before you, the exchange will not be executed. |
 | AveragePrice | `string` | The average of all the prices in the list of matched orders. The unit is `<exchanged currency>/<source currency>`. |
 | BestPrice | `string` | The best price available in the list of matched orders. The unit is `<exchanged currency>/<source currency>`. |
@@ -320,7 +320,7 @@ Get an accepted quote with ID.
 | ID | `UUID` | Accepted quote ID. |
 | SendingAddress | `string` | The address that funded the source amount. |
 | SourceAmount | `string` | The total source amount. |
-| Fee | `string` | Fee of the exchange. |
+| Fee | `string` | The total fee of the exchange. |
 | EstimatedExchangedAmount | `string` | The estimated exchange amount. Sometimes, if someone takes the order before you, the exchange will not be executed. |
 | ReceivingAddress | `string` | The address that the exchanged currency is received. |
 | Status | `string` | `Pending` or `Processed`. |
