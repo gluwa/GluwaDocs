@@ -77,7 +77,8 @@ Get Quote for currency exchange
       <td style="text-align:left">Fee</td>
       <td style="text-align:left"><code>string</code>
       </td>
-      <td style="text-align:left">The fee amount in source currency per for this order.</td>
+      <td style="text-align:left">The fee amount that must be used to create <code>ReserveTxnSignature</code>, <code>ExecuteTxnSignature</code> and <code>ReclaimTxnSignature</code>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">ExchangedAmount</td>
@@ -332,7 +333,7 @@ Get an accepted quote with ID.
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
 | SourceAmount | `string` | The amount in source currency that this order will exchange. |
-| Fee | `string` | The fee amount in source currency for this order. |
+| Fee | `string` | The fee amount used to create `ReserveTxnSignature`, `ExecuteTxnSignature` and `ReclaimTxnSignature` |
 | Status | `string` | `Pending`, `Success` or `Failed`. |
 | Price | `string` | The price this order is offering for the exchange. The unit is `<exchanged currency>/<source currency>`. |
 
