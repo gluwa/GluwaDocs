@@ -16,13 +16,67 @@ Get Quote for currency exchange
 
 #### Request Body
 
-| Attribute | Type | Description |
-| :--- | :--- | :--- |
-| Amount | `string` | The amount in source currency you want to exchange. |
-| Conversion | `string` | Conversion symbol for the exchange. See [conversion](all-supported-currencies.md#conversion-symbols). |
-| BtcPublicKey | `string` | _**Optional.**_ Required if the source currency is `BTC`. This is BTC public key of the sending address that will be used to reserve your funds. |
-
-### Response
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Attribute</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Amount</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">The amount in source currency you want to exchange.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Conversion</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">Conversion symbol for the exchange. See <a href="all-supported-currencies.md#conversion-symbols">conversion</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">SendingAddress</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">The address that will fund the source amount.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">SendingAddressSignature</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">The signature of the sending address. Generated the same way as <a href="authentication.md#x-request-signature">X-REQUEST-SIGNATURE</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">ReceivingAddress</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">
+        <p>The address that the exchanged currency will be received.</p>
+        <p></p>
+        <p>For example, if the conversion is <code>BtcUsdg</code>, your receiving
+          address must be a <code>USD-G</code> address since your exchanged funds will
+          be sent to that address.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">ReceivingAddressSignature</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">The signature of the receiving address. Generated the same way as <a href="authentication.md#x-request-signature">X-REQUEST-SIGNATURE</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">BtcPublicKey</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left"><em><b>Optional.</b></em> Required if the source currency is <code>BTC</code>.
+        This is BTC public key of the sending address that will be used to reserve
+        your funds.</td>
+    </tr>
+  </tbody>
+</table>### Response
 
 | HTTP Status | Return Object |
 | :--- | :--- |
@@ -149,53 +203,12 @@ Accept quote received from `POST /v1/Quote` endpoint.
 
 #### Request Body
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Attribute</th>
-      <th style="text-align:left">Type</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">MatchedOrders</td>
-      <td style="text-align:left">array of <a href="quote.md#matchedorder-1">MatchedOrder</a>
-      </td>
-      <td style="text-align:left">All orders that will fulfill this quote.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">SendingAddress</td>
-      <td style="text-align:left"><code>string</code>
-      </td>
-      <td style="text-align:left">The address that will fund the source amount.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">ReceivingAddress</td>
-      <td style="text-align:left"><code>string</code>
-      </td>
-      <td style="text-align:left">
-        <p>The address that the exchanged currency will be received.</p>
-        <p></p>
-        <p>For example, if the conversion is <code>BtcUsdg</code>, your receiving
-          address must be a <code>USD-G</code> address since your exchanged funds will
-          be sent to that address.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">ReceivingAddressSignature</td>
-      <td style="text-align:left"><code>string</code>
-      </td>
-      <td style="text-align:left">The signature of the receiving address. Generated the same way as <a href="authentication.md#x-request-signature">X-REQUEST-SIGNATURE</a>.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Checksum</td>
-      <td style="text-align:left"><code>string</code>
-      </td>
-      <td style="text-align:left">Checksum that was received when quote was created.</td>
-    </tr>
-  </tbody>
-</table>#### MatchedOrder
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| MatchedOrders | array of [MatchedOrder](quote.md#matchedorder-1) | All orders that will fulfill this quote. |
+| Checksum | `string` | Checksum that was received when quote was created. |
+
+#### MatchedOrder
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
