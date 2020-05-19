@@ -6,7 +6,7 @@ description: Learn various authorization methods you need to use Gluwa API.
 
 Gluwa has two types of authorizing a request:
 
-1. `X-REQUEST-ENDPOINT` header
+1. `X-REQUEST-SIGNATURE` header
 2. `Authorization` header
 
 Depending on the request, you may have to use at least one of them or none at all. Look under **Request -&gt; Headers** section under each endpoint to find out if an endpoint requires authorization.
