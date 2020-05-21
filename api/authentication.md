@@ -15,7 +15,7 @@ Depending on the request, you may have to use at least one of them or none at al
 
 `X-REQUEST-SIGNATURE` header is used to verify the ownership of an address, usually, for `GET` requests. The value of the header must be the signature of an address that you own. Follow the guide below to generate an Address Signature. 
 
-{% page-ref page="../development/todo-creating-transaction-signatures.md" %}
+{% page-ref page="../development/creating-transaction-signatures.md" %}
 
 
 

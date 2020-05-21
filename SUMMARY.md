@@ -25,10 +25,10 @@
 ## Development
 
 * [Environments](development/environments.md)
-* [QR Codes](development/payments-1.md)
+* [QR Codes](development/qr-codes.md)
 * [Webhooks](development/webhooks.md)
-* [Creating Signatures](development/todo-creating-transaction-signatures.md)
-* [Idempotent Requests](development/todo-idempotent-requests.md)
+* [Creating Signatures](development/creating-transaction-signatures.md)
+* [Idempotent Requests](development/idempotent-requests.md)
 * [Gluwa SDK for PHP](development/gluwa-sdk-for-php.md)
 * [Gluwa SDK for .NET](development/gluwa-sdk-for-.net.md)
 
@@ -36,7 +36,7 @@
 
 * [API Reference](api/api.md)
 * [Authorization](api/authentication.md)
-* [Currency and Conversion Symbols](api/all-supported-currencies.md)
+* [Currency and Conversion Symbols](api/currency-and-conversion-symbols.md)
 * [Errors and Error Codes](api/errors-and-error-codes.md)
 * [Balance](api/balance.md)
 * [Fee](api/fee.md)

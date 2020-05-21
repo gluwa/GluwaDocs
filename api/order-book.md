@@ -10,7 +10,7 @@ Get current order book.
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| conversion | `string` | Conversion symbol. See [conversion](all-supported-currencies.md#conversion-symbols). |
+| conversion | `string` | Conversion symbol. See [conversion](currency-and-conversion-symbols.md#conversion-symbols). |
 
 ### Response
 

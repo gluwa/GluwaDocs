@@ -33,7 +33,7 @@ Retrieve all orders.
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
 | ID | `string` | The order ID. |
-| Conversion | `string` | Conversion symbol for the order. See [conversion](all-supported-currencies.md#conversion-symbols).  |
+| Conversion | `string` | Conversion symbol for the order. See [conversion](currency-and-conversion-symbols.md#conversion-symbols).  |
 | SendingAddress | `string` | The address where the source amount is sent from. |
 | SourceAmount | `string` | The amount available for exchange in source currency. |
 | Price | `string` | The price the order will use for the exchange. The unit is `<exchanged currency>/<source currency>`. |
@@ -77,7 +77,7 @@ Retrieve an order with specified ID.
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
 | ID | `string` | The order ID. |
-| Conversion | `string` | Conversion symbol for the order. See [conversion](all-supported-currencies.md#conversion-symbols).  |
+| Conversion | `string` | Conversion symbol for the order. See [conversion](currency-and-conversion-symbols.md#conversion-symbols).  |
 | SendingAddress | `string` | The address where the source amount is sent from. |
 | SourceAmount | `string` | The amount available for exchange in source currency. |
 | Price | `string` | The price the order will use for the exchange. The unit is `<exchanged currency>/<source currency>`. |
@@ -122,7 +122,7 @@ Create a new order.
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| Conversion | `string` | Conversion symbol for the order. See [conversion](all-supported-currencies.md#conversion-symbols).  |
+| Conversion | `string` | Conversion symbol for the order. See [conversion](currency-and-conversion-symbols.md#conversion-symbols).  |
 | SendingAddress | `string` | The address that funds the source amount. |
 | SendingAddressSignature | `string` | Address Signature of the `SendingAddress` , generate in the same way as [X-REQUEST-SIGNATURE](authentication.md#x-request-signature). |
 | ReceivingAddress | `string` | The address that the exchanged amount will be received. |

@@ -35,7 +35,7 @@ Get Quote for currency exchange
       <td style="text-align:left">Conversion</td>
       <td style="text-align:left"><code>string</code>
       </td>
-      <td style="text-align:left">Conversion symbol for the exchange. See <a href="all-supported-currencies.md#conversion-symbols">conversion</a>.</td>
+      <td style="text-align:left">Conversion symbol for the exchange. See <a href="currency-and-conversion-symbols.md#conversion-symbols">conversion</a>.</td>
     </tr>
     <tr>
       <td style="text-align:left">SendingAddress</td>
@@ -86,7 +86,7 @@ Get Quote for currency exchange
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| Conversion | `string` | The [conversion](all-supported-currencies.md#conversion-symbols) of the exchange. |
+| Conversion | `string` | The [conversion](currency-and-conversion-symbols.md#conversion-symbols) of the exchange. |
 | TotalSourceAmount | `string` | The total amount in source currency that will be exchanged. |
 | TotalFee | `string` | The exchange fee. |
 | TotalEstimatedExchangedAmount | `string` | The total estimated exchanged amount in exchanged currency. |
@@ -258,7 +258,7 @@ Get a list of accepted quotes.
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| currency | `string` | The source [currency](all-supported-currencies.md#conversion-symbols) of the quote. |
+| currency | `string` | The source [currency](currency-and-conversion-symbols.md#conversion-symbols) of the quote. |
 | address | `string` | The sending address of the quote. |
 
 #### Query Parameters
@@ -291,7 +291,7 @@ Get a list of accepted quotes.
 | WorstPrice | `string` | The best price available in the list of matched orders. The unit is `<exchanged currency>/<source currency>`. |
 | ReceivingAddress | `string` | The address that the exchanged currency is received. |
 | Status | `string` | `Pending` or `Processed`. |
-| Conversion | `string` | The conversion of the quote. See [conversion](all-supported-currencies.md#conversion-symbols). |
+| Conversion | `string` | The conversion of the quote. See [conversion](currency-and-conversion-symbols.md#conversion-symbols). |
 
 ### Errors
 
@@ -338,7 +338,7 @@ Get an accepted quote with ID.
 | EstimatedExchangedAmount | `string` | The estimated exchange amount. Sometimes, if someone takes the order before you, the exchange will not be executed. |
 | ReceivingAddress | `string` | The address that the exchanged currency is received. |
 | Status | `string` | `Pending` or `Processed`. |
-| Conversion | `string` | The conversion of the quote. See [conversion](all-supported-currencies.md#conversion-symbols). |
+| Conversion | `string` | The conversion of the quote. See [conversion](currency-and-conversion-symbols.md#conversion-symbols). |
 | MatchedOrders | `array of` [`MatchedOrders`](quote.md#matchedorder-2)\`\` | The list of matched orders that fulfilled the source amount.  |
 
 #### MatchedOrder

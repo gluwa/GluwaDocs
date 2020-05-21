@@ -20,7 +20,7 @@ Retrieve the minimum fee amount.
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| currency | `string` | The [currency](all-supported-currencies.md#currency-symbols) unit for the fee. |
+| currency | `string` | The [currency](currency-and-conversion-symbols.md#currency-symbols) unit for the fee. |
 
 ### Response
 
@@ -32,7 +32,7 @@ Retrieve the minimum fee amount.
 
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| Currency | `string` | The [currency](all-supported-currencies.md#currency-symbols) unit of the fee |
+| Currency | `string` | The [currency](currency-and-conversion-symbols.md#currency-symbols) unit of the fee |
 | MinimumFee | `string` | The minimum transaction fee for the currency |
 
 ### Errors
