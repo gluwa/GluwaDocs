@@ -42,7 +42,11 @@
 * [Fee](api/fee.md)
 * [Transaction](api/transaction.md)
 * [Payment QR Code](api/qr-code.md)
-* [Quote](api/quote.md)
-* [Order](api/order.md)
-* [Order Book](api/order-book.md)
+
+## Exchange API
+
+* [Exchange Webhook](exchange-webhook.md)
+* [Quote](quote.md)
+* [Order](order.md)
+* [Order Book](order-book.md)
 

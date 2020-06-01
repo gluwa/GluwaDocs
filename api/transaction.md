@@ -61,7 +61,9 @@ Get transaction history for a given address.
         response (max 100).</td>
     </tr>
   </tbody>
-</table>### Response
+</table>
+
+### Response
 
 | HTTP Status | Return Object |
 | :--- | :--- |
@@ -163,7 +165,9 @@ Get transaction history for a given address.
       <td style="text-align:left"><em><b>Optional.</b></em> Transaction fee.</td>
     </tr>
   </tbody>
-</table>### Errors
+</table>
+
+### Errors
 
 | HTTP Status | Error Code | Description |
 | :--- | :--- | :--- |

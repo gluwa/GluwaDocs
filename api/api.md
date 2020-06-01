@@ -56,9 +56,9 @@ The Gluwa API utilizes various authorization methods for each endpoint. Follow t
 
 {% page-ref page="qr-code.md" %}
 
-{% page-ref page="quote.md" %}
+{% page-ref page="../quote.md" %}
 
-{% page-ref page="order.md" %}
+{% page-ref page="../order.md" %}
 
-{% page-ref page="order-book.md" %}
+{% page-ref page="../order-book.md" %}
 
