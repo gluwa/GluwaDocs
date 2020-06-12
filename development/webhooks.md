@@ -4,7 +4,7 @@ description: Use webhooks to be notified about events that happen in a Gluwa acc
 
 # Webhooks
 
-You can receive a webhook notification from Gluwa whenever a transaction associated to your account is processed \(i.e. is confirmed on the blockchain\).
+You can receive a webhook notification from Gluwa when there is a transaction associated with your account. Note that Gluwa only notifies you if the transaction was created by Gluwa API.
 
 To integrate Gluwa webhook to your service you need to:
 
