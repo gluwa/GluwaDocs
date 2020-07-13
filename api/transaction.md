@@ -164,6 +164,14 @@ Get transaction history for a given address.
       </td>
       <td style="text-align:left"><em><b>Optional.</b></em> Transaction fee.</td>
     </tr>
+    <tr>
+      <td style="text-align:left">ID</td>
+      <td style="text-align:left"><code>UUID</code>
+      </td>
+      <td style="text-align:left"><em><b>Optional</b></em>. Gluwa&apos;s internal transaction ID. If the
+        transaction was made outside of Gluwa&apos;s system (ex&gt; Transaction
+        was made directly on the blockchain), then this will not be available.</td>
+    </tr>
   </tbody>
 </table>
 

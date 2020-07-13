@@ -45,6 +45,8 @@
 
 ## Exchange API
 
+---
+
 * [Exchange Webhook](exchange-webhook.md)
 * [Quote](quote.md)
 * [Order](order.md)
