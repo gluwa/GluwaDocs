@@ -67,7 +67,7 @@ Get transaction history for a given address.
 
 | HTTP Status | Return Object |
 | :--- | :--- |
-| 200 | array of [Transaction](transaction.md#transaction-1). |
+| 200 | array of [Transaction](transaction.md#transaction). |
 
 #### Transaction
 
@@ -208,7 +208,7 @@ Get transaction history for a given address.
 
 | HTTP Status | Return Object |
 | :--- | :--- |
-| 200 | [Transaction](transaction.md#transaction-1). |
+| 200 | [Transaction](transaction.md#transaction). |
 
 ### Errors
 
