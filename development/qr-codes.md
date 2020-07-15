@@ -12,7 +12,7 @@ This guide shows you how to include Gluwa QR codes on your checkout pages.
 
 ## Types of QR Code
 
-Gluwa has two types of QR code:
+Gluwa has three types of QR code:
 
 * **Transfer QR Code**: A user can generate Transfer QR code using Gluwa mobile application. If you scan the QR code using Gluwa mobile application, you initiate a transfer to the user. This QR code initiates an exact amount transfer. So you see the fee information on the transaction summary page.
 * **Payment QR Code**: A user can generate Payment QR code using Gluwa API. The user needs to obtain API keys to do this. This QR code forces the receiver to pay the fee. This means that Gluwa mobile application does not show the fee information on the transaction summary page.
