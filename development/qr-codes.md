@@ -16,6 +16,7 @@ Gluwa has two types of QR code:
 
 * **Transfer QR Code**: A user can generate Transfer QR code using Gluwa mobile application. If you scan the QR code using Gluwa mobile application, you initiate a transfer to the user. This QR code initiates an exact amount transfer. So you see the fee information on the transaction summary page.
 * **Payment QR Code**: A user can generate Payment QR code using Gluwa API. The user needs to obtain API keys to do this. This QR code forces the receiver to pay the fee. This means that Gluwa mobile application does not show the fee information on the transaction summary page.
+* **Send Address QR Code**: A user can create a QR code to trigger Gluwa mobile application to send its address. If a user scans the QR code, Gluwa mobile application will send its address to the predefined target URL.
 
 ## Creating Payment QR Codes
 

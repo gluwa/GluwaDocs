@@ -29,6 +29,7 @@
 * [Webhooks](development/webhooks.md)
 * [Creating Signatures](development/creating-transaction-signatures.md)
 * [Idempotent Requests](development/idempotent-requests.md)
+* [Sending Address](development/sending-address.md)
 * [Gluwa SDK for PHP](development/gluwa-sdk-for-php.md)
 * [Gluwa SDK for .NET](development/gluwa-sdk-for-.net.md)
 
