@@ -56,14 +56,11 @@ public void postTransaction_test() {
 	GluwaApiSDKImpl wrapper = new GluwaApiSDKImpl(new ConfigurationForTest());
 	GluwaTransaction transaction = new GluwaTransaction();
 
-	transaction.setCurrency(Currency.USDG); // Currency.KRWG, Currency.NGNG
+	transaction.setCurrency("{Currency}"); // Currency.KRWG, Currency.NGNG
 	transaction.setAmount("{Amount}");
 	transaction.setTargetAddress("{Target's Address}");
 	transaction.setNote("{Note}");
 	transaction.setMerchantOrderID("{Your OrderID}");
-	transaction.setIdem(UUID); // optional
-	transaction.setPaymentID("{PaymentID}"); // optional
-	transaction.setPaymentSig("{PaymentSig}"); // optional		
 
 	GluwaResponse result = wrapper.postTransaction(transaction);
 }
@@ -85,7 +82,7 @@ public void getListTransactionHistory_test() {
   GluwaApiSDKImpl wrapper = new GluwaApiSDKImpl(conf);
 
   GluwaTransaction transaction = new GluwaTransaction();
-  transaction.setCurrency(Currency.USDG);
+  transaction.setCurrency("{Currency}");
   transaction.setLimit(100); // optional
   transaction.setStatus("Confirmed"); // optional
   transaction.setOffset(0); // optional
@@ -102,7 +99,7 @@ public void getListTransactionDetail_test() {
   GluwaApiSDKImpl wrapper = new GluwaApiSDKImpl(conf);
 
   GluwaTransaction transaction = new GluwaTransaction();
-  transaction.setCurrency(Currency.USDG);
+  transaction.setCurrency("{Currency}");
   transaction.setTxnHash("{Txn Hash}");
 
   GluwaResponse result = wrapper.getListTransactionDetail(transaction);
@@ -117,7 +114,7 @@ public void getAddresses_Test() {
   GluwaApiSDKImpl wrapper = new GluwaApiSDKImpl(conf);
 
   GluwaTransaction transaction = new GluwaTransaction();
-  transaction.setCurrency(Currency.USDG);
+  transaction.setCurrency("{Currency}");
 
   GluwaResponse result = wrapper.getAddresses(transaction);
 }
