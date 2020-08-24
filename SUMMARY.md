@@ -32,6 +32,7 @@
 * [Sending Address](development/sending-address.md)
 * [Gluwa SDK for PHP](development/gluwa-sdk-for-php.md)
 * [Gluwa SDK for .NET](development/gluwa-sdk-for-.net.md)
+* [Gluwa SDK for JAVA](development/gluwa-sdk-for-java.md)
 
 ## API
 
