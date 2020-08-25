@@ -26,6 +26,12 @@ When an exchange is requested using your order, Gluwa will make a POST request t
   </thead>
   <tbody>
     <tr>
+      <td style="text-align:left">ID</td>
+      <td style="text-align:left"><code>UUID</code>
+      </td>
+      <td style="text-align:left">ID of the exchange request</td>
+    </tr>
+    <tr>
       <td style="text-align:left">EventType</td>
       <td style="text-align:left"><code>string</code>
       </td>
@@ -113,17 +119,13 @@ When an exchange is requested using your order, Gluwa will make a POST request t
 If you want to verify that the request was actually sent from Gluwa, you can check the veracity of the webhook as shown [here](development/webhooks.md#checking-the-veracity-of-a-request-using-x-request-signature).
 {% endhint %}
 
-The maker **MUST** return 200 status code along with the following body to accept the exchange request.  
+After the you receive the webhook receive, you must do the following to accept the exchange request:
 
-| Attribute | Type | Description |
-| :--- | :--- | :--- |
-| Nonce | `int` | _**Optional**_. Required if the source currency is Gluwacoin currency \(ex&gt; `USD-G`, `KRW-G`\). Nonce is an integer used when creating reserve transaction signature. It must increase each time you make any new transactions \(transfer, exchange, etc\). |
-| SendingAddress | `string` | The address that funded the source amount. |
-| ReserveTxnSignature | `string` | Reserve transaction signature used to reserve funds for the exchange. |
-| ExecuteTxnSignature | `string` | _**Optional.**_ Required if the source currency `BTC`. Execute transaction signature used to execute the exchange when your funds are available in the reserve address. |
-| ReclaimTxnSignature | `string` | _**Optional.**_ Required if the source currency `BTC`. Reclaim transaction signature used to return the funds in the reserve address when the exchange fails or expires. |
+1. Return 200 status code as a response to the webhook request. If you return any other response, Gluwa will try to send the same webhook for the maximum of 5 times, before treating the exchange request as declined.
 
-If the maker returns any other response, Gluwa will try to send the same webhook for the maximum of 5 times, before treating the exchange request as declined. If you decline the exchange request 5 times, your order will be canceled automatically.
+2. Use [PATCH /V1/ExchangeRequest/{ID}](exchange-request.md#patch-v-1-exchangerequests-id) endpoint to accept the exchange request. If you fail to successfully accept the exchange request within 10 minutes, the exchange request is automatically declined.
+
+If you decline the exchange request for an order 5 times, that order will be canceled automatically.
 
 ## **Receiving Exchange Success and Failed Webhooks**
 

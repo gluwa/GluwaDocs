@@ -52,5 +52,6 @@
 * [Exchange Webhook](exchange-webhook.md)
 * [Quote](quote.md)
 * [Order](order.md)
+* [Exchange Request](exchange-request.md)
 * [Order Book](order-book.md)
 
