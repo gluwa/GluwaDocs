@@ -189,6 +189,12 @@ If you registered your webhook endpoint prior to XXXXX, see [V1 webhook](webhook
       </td>
     </tr>
     <tr>
+      <td style="text-align:left">Summary</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">The summary of the webhook.</td>
+    </tr>
+    <tr>
       <td style="text-align:left">Resource</td>
       <td style="text-align:left"><code>obj</code>
       </td>
@@ -257,8 +263,12 @@ If you registered your webhook endpoint prior to XXXXX, see [V1 webhook](webhook
       <td style="text-align:left">Currency</td>
       <td style="text-align:left"><code>string</code>
       </td>
-      <td style="text-align:left">The <a href="../api/currency-and-conversion-symbols.md#currency-symbols">currency</a> of
-        the transaction.</td>
+      <td style="text-align:left">
+        <p>The <a href="../api/currency-and-conversion-symbols.md#currency-symbols">currency</a> of
+          the transaction.</p>
+        <p></p>
+        <p>Webhook does not support <code>BTC</code> Transactions.</p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">Status</td>
