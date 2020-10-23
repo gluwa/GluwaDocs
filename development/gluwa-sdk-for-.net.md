@@ -54,13 +54,17 @@ QRCodeClient qrCodeClient = new QRCodeClient(true);
 #### [Create a New Transaction](../api/api.md#create-a-new-transaction)
 
 ```csharp
-ECurrency currency = “{USDG or KRWG}”;
-string address = “{Your Gluwacoin public Address}”;
-string privateKey = “{Your Gluwacoin Private Key}”;
-string amount = “{Transaction amount, not including the fee}”;
-string target = “{The address that the transaction will be sent to}”
-string merchantOrderID = “{Identifier for the transaction that was provided by the merchant user}”; //default to null. Optional
-string note = “{Additional information about the transaction that a user can provide}”; //default to null. Optional”
+ECurrency currency = "{USDG or KRWG or NGNG or BTC}";
+string address = "{Your Gluwacoin public Address}";
+string privateKey = "{Your Gluwacoin Private Key}";
+string amount = "{Transaction amount, not including the fee}";
+string target = "{The address that the transaction will be sent to}";
+string merchantOrderID = "{Identifier for the transaction that was provided by the merchant user}"; // default to null. Optional
+string note = "{Additional information about the transaction that a user can provide}"; // default to null. Optional
+string nonce = "{Nonce for the transaction. For Gluwacoin currencies only}"; // default to null. Optional
+string idem = "{Idempotent key for the transaction to prevent duplicate transactions}"; // default to null. Optional
+string paymentID = "{ID for the QR code payment}"; // default to null. Optional
+string paymentSig = "{Signature of the QR code payment. Required if PaymentID is not null}"; // default to null. Optional
 
 Result<bool, ErrorResponse> result = await gluwaClient.CreateTransactionAsync(
     currency, 
@@ -69,7 +73,11 @@ Result<bool, ErrorResponse> result = await gluwaClient.CreateTransactionAsync(
     amount, 
     target, 
     merchantOrderID, // optional, default = null
-    note // optional, default = null
+    note, // optional, default = null
+    nonce, // optional, default = null
+    idem, // optional, default = null
+    paymentID, // optional, default = null
+    paymentSig // optional, default = null
 );
 
 if (result.IsFailure)
@@ -91,6 +99,7 @@ else
 {
     // successful response. See result.Data for the response
 }
+
 ```
 
 Returns `true` if successful and `false` if unsuccessful. Successful response means that the transaction has been accepted by Gluwa and will be included in the blockchain in couple of minutes.
@@ -98,14 +107,14 @@ Returns `true` if successful and `false` if unsuccessful. Successful response me
 #### [List Transaction History for an Address](../api/api.md#list-transaction-history-for-an-address)
 
 ```csharp
-ECurrency currency = “{USDG or KRWG}”;
-string address = “{Your Gluwacoin public Address}”;
-string privateKey =”{Your Gluwacoin Private Key}”;
-uint limit = “{Number of transactions to include in the result}”; // defaults to 100. Optional
-ETransactionStatusFilter status = “{Incomplete or Confirmed}”; //defaults to Confirmed. Optional
-uint offset = “{Number of transactions to skip}”; //default to 0. Optional”
+ECurrency currency = "{USDG or KRWG or NGNG or BTC}";
+string address = "{Your Gluwacoin public Address}";
+string privateKey = "{Your Gluwacoin Private Key}";
+uint limit = "{Number of transactions to include in the result}"; // defaults to 100. Optional
+ETransactionStatusFilter status = "{Incomplete or Confirmed}"; // defaults to Confirmed. Optional
+uint offset = "{Number of transactions to skip}"; // default to 0. Optional”
 
-Result<List<SuccessResponse>, ErrorResponse> result =await gluwaClient.GetTransactionListAsync(
+Result<List<SuccessResponse>, ErrorResponse> result = await gluwaClient.GetTransactionListAsync(
     currency,
     address,
     privateKey,
@@ -133,16 +142,17 @@ else
 {
     // successful response. See result.Data for the response
 }
+
 ```
 
 #### [Retrieve Transaction Details by Hash](../api/api.md#retrieve-transaction-details-by-hash)
 
 ```csharp
-ECurrency currency = “{USDG or KRWG}”;
-string privateKey =”{Your Gluwacoin Private Key}” ;
-string txnHash = “{Hash of the transaction on the blockchain}”;
+ECurrency currency = "{USDG or KRWG or NGNG or BTC}";
+string privateKey = "{Your Gluwacoin Private Key}";
+string txnHash = "{Hash of the transaction on the blockchain}";
 
-Result<SuccessResponse, ErrorResponse> result =await gluwaClient.GetTransactionDetailsAsync(
+Result<SuccessResponse, ErrorResponse> result = await gluwaClient.GetTransactionDetailsAsync(
 currency,
 privateKey,
 txnHash
@@ -167,17 +177,20 @@ else
 {
     // successful response. See result.Data for the response
 }
+
 ```
 
 #### [Retrieve a Balance for an Address](../api/api.md#retrieve-a-balance-for-an-address)
 
 ```csharp
-ECurrency currency = “{USDG or KRWG}”;
-string address = “{Your Gluwacoin public Address}”;
+ECurrency currency = "{USDG or KRWG or NGNG or BTC}";
+string address = "{Your Gluwacoin public Address}";
+bool bUnspentOutputs = false; // (For BTC only) if true, the response includes unspent outputs for the address. Default to false. Optional
 
 Result<SuccessResponse, ErrorResponse> result = await gluwaClient.GetBalanceAsync(
     currency, 
-    address
+    address,
+    bUnspentOutputs
 );
 
 if (result.IsFailure)
@@ -199,6 +212,7 @@ else
 {
     // successful response. See result.Data for the response
 }
+
 ```
 
 ### QRCodeClient
@@ -206,17 +220,17 @@ else
 #### [Create a Payment QR Code](../api/api.md#create-a-payment-qr-code)
 
 ```csharp
-string apiKey =”{Your API Key}”;
-string secret =”{Your API Secret}”;
-string address = “{Your public address}”;
-string privateKey =”{Your private Key}”; 
-EPaymentCurrency currency = “{USDG or KRWG}”;
-string amount =”{Payment amount}”;
-string format = “{Desired image format}”; // defaults to null. return base64 string. Optional.
-// if you want to receive an image file put ‘image/jpeg’ or ‘image/png’ instead.
-string note = “{Additional information, used by the merchant user}”; //default to null. Optional
-string merchantOrderID = “{Identifier for the payment, used by the merchant user}”; //default to null. Optional
-int expiry = “{Time of expiry for the QR code in seconds}”; //default to 1800. Optional”
+string apiKey = "{Your API Key}";
+string secret = "{Your API Secret}";
+string address = "{Your public address}";
+string privateKey = "{Your private Key}"; 
+EPaymentCurrency currency = "{USDG or KRWG or NGNG}";
+string amount = "{Payment amount}";
+string format = "{Desired image format}"; // defaults to null. Returns base64 string. Optional.
+                                          // if you want to receive an image file put ‘image/jpeg’ or ‘image/png’ instead.
+string note = "{Additional information, used by the merchant user}"; // default to null. Optional
+string merchantOrderID = "{Identifier for the payment, used by the merchant user}"; // default to null. Optional
+int expiry = "{Time of expiry for the QR code in seconds}"; // default to 1800. Optional”
 
 Result<string, ErrorResponse> result = await qRCodeClient.GetPaymentQRCodeAsync(
     apiKey,
@@ -250,6 +264,7 @@ else
 {
     // successful response. See result.Data for the response
 }
+
 ```
 
 ### Webhook Validation
@@ -257,22 +272,23 @@ else
 A method for validating if the webhook is from Gluwa or not. Gluwa sends a webhook request when a transaction is created or completed. Learn more about webhooks from Gluwa [here](../get-started/dashboard/webhooks.md).
 
 ```csharp
-PayLoad payLoad = “{Payload}”;
 PayLoad payLoad = new PayLoad()
 {
-    MerchantOrderID = “{Identifier for the transaction that was provided by the merchant user}”,
-    EventType = {TransactionConfirmed or TransactionCreated or TransactionFailed},
-    Type = {Webhook or PushNotification},
-    ResourceID = "{Transcation ID}"
+    Data = new Data
+    {
+        MerchantOrderID = "My merchant order ID",
+        EventType = EEventType.TransactionConfirmed,
+        Type = ENotificationType.Webhook,
+        ResourceID = "0xfd820a7e9d9851537e259289269db88826a561a04e1c6982b4d860c797a625ce"
+    }
 };
-string signature = “{The value of X-REQUEST-SIGNATURE}”;
-string webhookSecretKey = “{Your Webhook Secret}”;
 
-Webhook.ValidateWebhook(
-payLoad, 
-signature,
-webhookSecretKey);
+string signature = "{The value of X-REQUEST-SIGNATURE header}";
+string webhookSecretKey = "{Your Webhook Secret}";
+
+bool bValidated = Webhook.ValidateWebhook(
+    payLoad, 
+    signature,
+    webhookSecretKey); // true if validation was successful
 ```
-
-The method returns `true` if the validation was successful.
 
