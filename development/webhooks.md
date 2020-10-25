@@ -65,7 +65,7 @@ Currently, we support webhooks for the following events:
 5. Exchange Failed
 
 {% hint style="info" %}
-If you registered your webhook endpoint prior to XXXXX, see [V1 webhook](webhooks.md#version-1-v-1-webhook-events). Else, see [V2 webhook](webhooks.md#version-2-v-2-webhook-events).
+If you generated your webhook secret prior to October 8th, 2020, see [V1 webhook](webhooks.md#version-1-v-1-webhook-events). Else, see [V2 webhook](webhooks.md#version-2-v-2-webhook-events).
 {% endhint %}
 
 ### Version 1 \(V1\) Webhook Events
