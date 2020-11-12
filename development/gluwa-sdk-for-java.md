@@ -122,7 +122,7 @@ public void getAddresses_Test() {
 
 #### ​[Webhook Validation](https://app.gitbook.com/@gluwa/s/gluwa-documentation/~/drafts/-MEwcvFqT7xZLjp3bwpG/development/webhooks#step-3-verify-your-wallet-address)​ <a id="webhook-validation"></a>
 
-When the user completes transfer via the QR code, the Gluwa API sends a webhook to your webhook endpoint. Verify that the values ​​actually sent by the Gluwa server are correct.‌
+When the user completes the transfer via the QR code, the Gluwa API sends a webhook to your webhook endpoint. Verify that the values ​​were actually sent from the Gluwa server.‌
 
 Verify the requested Signature and Payload as follows:
 

@@ -141,7 +141,7 @@ $Response2 = $Gluwa->validateWebhook([
 {% tab title="Response" %}
 | Type | Description |
 | :--- | :--- |
-| boolean | This will return `true` if it is a valid webhook. If it returns `false`, user didn't successfully process the deposit. |
+| boolean | This will return `true` if it is a valid webhook. If it returns `false`, you either set an incorrect secret or the webhook did not originate from Gluwa. |
 {% endtab %}
 {% endtabs %}
 

@@ -102,7 +102,7 @@ else
 
 ```
 
-Returns `true` if successful and `false` if unsuccessful. Successful response means that the transaction has been accepted by Gluwa and will be included in the blockchain in couple of minutes.
+Returns `true` if successful and `false` if unsuccessful. Successful response means that the transaction has been accepted by Gluwa and will be included in the blockchain in a couple of minutes.
 
 #### [List Transaction History for an Address](../api/api.md#list-transaction-history-for-an-address)
 
