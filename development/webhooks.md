@@ -285,6 +285,20 @@ If you generated your webhook secret prior to October 8th, 2020, see [V1 webhook
           a confirmation. Failed - The transaction has failed for some reason.</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left">MerchantOrderID</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">Used by the receiver of the receiver of the transaction to identify a
+        payment. Supported by QR code payment feature only.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Note</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">A message attached to the transaction. It is an optional memo you can
+        associate with the transaction.</td>
+    </tr>
   </tbody>
 </table>
 
