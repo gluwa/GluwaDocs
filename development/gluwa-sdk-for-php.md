@@ -2,6 +2,10 @@
 
 If your service is developed in PHP, the features we provide are available through the SDK. The Gluwa SDK for PHP is a library with powerful features that enable PHP developers to easily make requests to the Gluwa APIs.
 
+## Update
+
+v1.0.9 - Add support sUSDCG \(01/06/2021\)
+
 ## Getting started
 
 Download the PHP Package below and upload it to your server. The SDK requires PHP 5.6 or greater.
