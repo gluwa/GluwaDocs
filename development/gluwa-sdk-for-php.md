@@ -53,7 +53,7 @@ Now you are ready to use the Gluwa API.
 #### [Create a New Transaction](../api/api.md#create-a-new-transaction)
 
 ```php
-$PostTransaction_Currency = '{USDG or KRWG}';
+$PostTransaction_Currency = '{USDG or sUSDCG or KRWG}';
 $PostTransaction_Amount = '{Sending Amount}';
 $PostTransaction_Target = '{Receiver\'s Address}';
 $PostTransaction_MerchantOrderID = '{Merchant\'s Order ID. Optional}';
@@ -74,7 +74,7 @@ $Response = $Gluwa->postTransaction([
 
 ```php
 $Response = $Gluwa->getPaymentQRCode([
-    'Currency' => 'USDG',
+    'Currency' => 'USDG', // USDG or sUSDCG or KRWG
     'Amount' => '1',
     'Note' => '', // optional
     'MerchantOrderID' => '', // optional
@@ -92,7 +92,7 @@ $Response = $Gluwa->getPaymentQRCode([
 
 ```php
 $Response = $Gluwa->getListTransactionHistory([
-    'Currency' => 'USDG',
+    'Currency' => 'USDG', // USDG or sUSDCG or KRWG
     'Limit' => '100', // optional
     'Status' => 'Confirmed', // optional
     'Offset' => '0', // optional
@@ -103,7 +103,7 @@ $Response = $Gluwa->getListTransactionHistory([
 
 ```php
 $Response = $Gluwa->getListTransactionDetail([
-    'Currency' => 'USDG',
+    'Currency' => 'USDG', // USDG or sUSDCG or KRWG
     'TxnHash' => '',
 ]);
 ```
@@ -112,7 +112,7 @@ $Response = $Gluwa->getListTransactionDetail([
 
 ```php
 $Response = $Gluwa->getAddresses([
-    'Currency' => 'USDG',
+    'Currency' => 'USDG', // USDG or sUSDCG or KRWG
 ]);
 ```
 
