@@ -33,6 +33,7 @@
 * [Gluwa SDK for PHP](development/gluwa-sdk-for-php.md)
 * [Gluwa SDK for .NET](development/gluwa-sdk-for-.net.md)
 * [Gluwa SDK for JAVA](development/gluwa-sdk-for-java.md)
+* [Gluwa SDK for Javascript \(Node.js\)](development/gluwa-sdk-for-javascript-nodejs.md)
 
 ## API
 
