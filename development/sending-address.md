@@ -72,7 +72,7 @@ const code = jsQR(sendAddressData, width, height);
 #### Universal link Example
 
 ```markup
-<a href="https://app.gluwa.com/action/scan/%7B%22Currency%22:%22BTC%22,%22Target%22:%221PDtSHFsxGbVDEUXw95Q819kkWnFT5jRAN%22%7D">
+<a href="https://app.gluwa.com/action/scan/%7B%22currency%22%3A%22BTC%22%2C%22Target%22%3A%22TEST%22%7D">
     Connect to Gluwa app
 </a>
 ```
@@ -90,7 +90,7 @@ const sendAddressData = {
     Environment: 'prod',
 };
 
-const url = `https://app.gluwa.com/action/scan/${encodeURIComponent(sendAddressData)}`;
+const url = `https://app.gluwa.com/action/scan/${encodeURIComponent(JSON.stingify(sendAddressData))}`;
 ```
 
 ### After open Gluwa app
