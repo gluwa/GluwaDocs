@@ -15,9 +15,7 @@ There is a transfer fee applied when you initiate a send transaction to another 
 
 You will see a confirmation screen once the transfer has been completed.
 
-![](../../.gitbook/assets/74184258_613667896124099_6372533768388870144_n%20%281%29.png)
+![](../../.gitbook/assets/send-01.png)
 
-![](../../.gitbook/assets/75418922_793811237720317_2927748183410868224_n.png)
-
-![](../../.gitbook/assets/preview-confirm.png)
+![](../../.gitbook/assets/send-02.png)
 
