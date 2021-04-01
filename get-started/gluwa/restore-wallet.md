@@ -16,9 +16,7 @@ When you created a new Gluwa Wallet, you were prompted to note down the generate
    1. Provide a new password
    2. Enter the recovery Phrase
 
-![](../../.gitbook/assets/login-screen.png)
+![](../../.gitbook/assets/restore-01.png)
 
-![](../../.gitbook/assets/recover-wallet%20%281%29.png)
-
-![](../../.gitbook/assets/added-passprase%20%282%29.png)
+![](../../.gitbook/assets/restore-02.png)
 

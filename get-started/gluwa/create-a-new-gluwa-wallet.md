@@ -22,7 +22,7 @@ When you request to create a new wallet, Gluwa mobile app creates a random set o
 Also, the password is encrypted irreversibly using a hashing algorithm and the unique key of your device. Therefore, you need both your device and your password to access your wallet.
 {% endhint %}
 
-![](../../.gitbook/assets/create%20%281%29.png)
+![](../../.gitbook/assets/create-01.png)
 
 ## Backup the Recovery Phrase
 
