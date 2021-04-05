@@ -12,13 +12,13 @@ Gluwa mobile app provides a simple interface for signing a message.
 
 First, enter the menu screen from the bottom navigation tab. Find the Signature menu on the menu list and select it.
 
-![Menu Screen](../../.gitbook/assets/menu-user-added-recovery-phrase.png)
+![](../../.gitbook/assets/create-a-signature-01.png)
 
 You will see the Sign screen.
 
-![Submit Message](../../.gitbook/assets/message.png)
+![](../../.gitbook/assets/create-a-signature-02.png)
 
 Now, Gluwa app will display your address, message and signature.
 
-![Copy Your Signature](../../.gitbook/assets/signature.png)
+![](../../.gitbook/assets/create-a-signature-03.png)
 
