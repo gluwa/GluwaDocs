@@ -4,6 +4,10 @@ description: All release notes pertaining to Gluwa Wallet
 
 # Gluwa Wallet
 
+## 05-03-2021 - Version 6.1.1
+
+* Fixed entering .\(dot\) on Exchange view
+
 ## 04-28-2021 - Version 6.1.0
 
 * Launched support for sNGN-G
