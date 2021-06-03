@@ -237,7 +237,7 @@ Get transaction history for a given address.
 | Currency | `string` | The [currency](currency-and-conversion-symbols.md#currency-symbols) of the transaction. |
 | Source | `string` | Address of the sender. |
 | Target | `string` | Address of the receiver. |
-| Nonce | `string` | _**Optional.**_ Required if using Gluwacoin as the currency of the transaction. Nonce is an integer used when creating reserve transaction signature. It must increase each time you make any new transactions \(transfer, exchange, etc\). |
+| Nonce | `string` | _**Optional.**_ Required if using Gluwacoin as the currency of the transaction. Nonce is an unsigned integer used when creating reserve transaction signature. It must be unique each time you make any new transactions \(transfer, exchange, etc\). Maximum value is 2^256-1. |
 | MerchantOrderID | `string` | _**Optional.**_ A string value attached to the transaction which can be used for traceability between Gluwa and your application. |
 | Note | `string` | _**Optional.**_ Optional memo attached to the transaction. |
 | Idem | `UUID` | _**Optional.**_ Used for idempotent requests. See [Idempotent Requests](../development/idempotent-requests.md). |
