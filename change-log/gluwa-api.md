@@ -4,6 +4,19 @@ description: All release notes pertaining to Gluwa API and Dashboard
 
 # Gluwa API
 
+## 06-01-2021
+
+### Dashboard
+
+* Updated jQuery to latest version 
+* Fixed \(export\) transaction bugs 
+
+### API
+
+* Included HTTP request/response in the logs
+* Launched toggle App Settings for currency releases 
+* Updated gas price calculation
+
 ## 10-13-2020
 
 ### Dashboard
