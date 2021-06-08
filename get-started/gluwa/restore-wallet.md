@@ -6,7 +6,7 @@ description: >-
 
 # Restore Wallet
 
-[![Recover Wallet](../../.gitbook/assets/gluwa-wallet-youtube-thumbnail-recover.jpg)](http://www.youtube.com/watch?v=i2ROvktarJA)
+[![Recover Wallet](../../.gitbook/assets/user-guide-recovery-01.jpg)](https://youtu.be/_TrnZ6yr2uo)
 
 When you created a new Gluwa Wallet, you were prompted to note down the generated [Recovery Passphrase.](https://docs.gluwa.com/get-started/gluwa/create-a-new-gluwa-wallet#backup-the-recovery-phrase) In case you forgot your password, you can recover by entering all the Recovery Passphrase words.
 
