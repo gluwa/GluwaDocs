@@ -4,6 +4,13 @@ description: All release notes pertaining to Gluwa Wallet
 
 # Gluwa Wallet
 
+## 06-07-2021 - Version 6.1.2
+
+* Improved testing for sKRWC-G and sNGN-G 
+* Enhanced fingerprint and face ID features
+* Fixed minimum of BTC in transaction 
+* Fixed privacy and terms page
+
 ## 05-03-2021 - Version 6.1.1
 
 * Fixed entering .\(dot\) on Exchange view
