@@ -10,6 +10,7 @@
 ## Get Started
 
 * [Gluwa Mobile App](get-started/gluwa/README.md)
+  * [Gluwa Invest \(Bond Account\) FAQ](get-started/gluwa/gluwa-invest-bond-account-faq.md)
   * [Create a New Gluwa Wallet](get-started/gluwa/create-a-new-gluwa-wallet.md)
   * [Restore Wallet](get-started/gluwa/restore-wallet.md)
   * [Send Gluwacoin to an address](get-started/gluwa/send-gluwacoin-to-an-address.md)
