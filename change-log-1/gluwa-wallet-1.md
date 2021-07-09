@@ -4,8 +4,6 @@ description: All release notes pertaining to Gluwa Wallet
 
 # Gluwa Wallet
 
-
-
 ## 07-08-2021 - Version 6.1.3
 
 * Enhanced user's safety by adding access to the recovery phrase via the Additional Security Menu 
