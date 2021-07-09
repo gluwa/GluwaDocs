@@ -319,3 +319,21 @@ string signature = txn.ToHex();
 
 Note that the above is just an example. The number of inputs and outputs may differ for each transaction so you may have to rearrange inputs and outputs accordingly.
 
+## Reserve Signature
+
+When a market consumer and a market provider agree to exchange currencies, they need to lock the amount that they promised to send to each other so that those funds are available when the exchange actually happens. This process is called “Reserving.”
+
+Since we don’t save the private keys of any user in our system, the user has to give us the txn signature for the reserving funds. There are two types of reservation:
+
+Gluwacoin reservation
+
+Bitcoin reservation
+
+
+
+## Execute Signature
+
+## Reclaim Signature
+
+
+
