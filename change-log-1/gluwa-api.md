@@ -4,6 +4,22 @@ description: All release notes pertaining to Gluwa API and Dashboard
 
 # Gluwa API
 
+## 07-27-2021 - Version 2021.07.01
+
+### Dashboard
+
+* Fixed secure flag set on all cookies for tools and dashboard 
+
+### API
+
+* Updates SDKs in accordance with contracts so that updates are aligned
+* Implemented Web3ClientFactory and improved RetryQueue and API to handle an increased load in TPS 
+* Installed USDC-G support 
+* Updated Peg/Unpeg for USDC-G and sUSDC-G gateway
+* Installed Peg/Unpeg related features and updates for the Gluwa Internal API, Gluwa public API and interaction endpoints with the Luniverse Gatekeeper
+* Fixed GetBalance API to get correct address and balance
+* Added additional logging/metrics for GluwaExchangeRequests
+
 ## 06-01-2021
 
 ### Dashboard
