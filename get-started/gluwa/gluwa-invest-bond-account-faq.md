@@ -6,7 +6,7 @@ description: A list of frequently asked question about how our Bond Account oper
 
 ## When can I withdraw?
 
-Your deposited balance plus your earned interest will become withdrawable 12 months \(365 days\) after date of deposit. If you have made multiple deposits, each deposit will become separately withdrawable 12 months \(365 days\) after deposit date.
+Your deposited balance plus your earned interest will become withdrawable 3 months \(~90 days\) after date of deposit. If you have made multiple deposits, each deposit will become separately withdrawable 3 months after deposit date.
 
 ## What documents are acceptable for proof of address?
 
@@ -15,7 +15,8 @@ The below document types will be acceptable provided they have been certified by
 * Utility bill \(dated within 90 days\)
 * Bank statement \(dated within 90 days\)
 * Lease agreement
-* ...
+
+If you're not sure, please reach our to us at support@gluwa.com
 
 ## Why do I have to provide proof-of-address?
 
@@ -27,23 +28,23 @@ KYC or Know Your Customer is a procedure any financial services company is oblig
 
 ## Can I open a Bond Account if I'm a U.S Citizen?
 
-No. The Gluwa Invest Bond Account is available in most countries worldwide except for the United States. We are currently working with our partners to make our products available to U.S. citizens. Join our waitlist here to get notified when this happens.
+No. The Gluwa Invest Bond Account is available in most countries worldwide except for the United States. We are currently working with our partners to make our products available to U.S. citizens. Join our waitlist [here](https://docs.google.com/forms/d/e/1FAIpQLScYLbJDO-B60Nq4kbfNrwmrv8tbgI-qdkHENgatvVqSFnc35A/viewform?usp=pp_url) to get notified when this happens.
 
-## Where can I view/download the agreements I provided consent for
+## Where can I view/download the agreements I provided consent for?
 
-All agreements and documents related to the Gluwa Invest Bond Account can be found under Menu -&gt; Account -&gt; Agreements + Documents within the Gluwa App.
+All agreements and documents related to the Gluwa Invest Bond Account can be found on Gluwa Dashboard.
 
-## What is 'Total Withdrawable Balance' mean?
+## What does 'Total Withdrawable Balance' mean?
 
-The total withdrawable balance is the amount you are able to withdraw at that time. In other words, it is the total of your deposits that have matured by 12 months/365 days.
+The total withdrawable balance is the amount you are able to withdraw at that time. In other words, it is the total of your deposits that have matured by 3 months.
 
 ## How does a Gluwa Bond Account work?
 
-The Gluwa Invest Bond Account enables individuals to earn interest on their deposited crypto.
+The Gluwa Invest Bond Account enables individuals to earn interest on their deposited sUSDC-G stablecoin.
 
 ## What is the Gluwa Invest Bond Account?
 
-The Gluwa Invest Bond Account is an interest-bearing account that offers market-leading yields \(15% APY\) to crypto investors. Users can deposit crypto into the account to start accruing interest daily. Your deposit plus the interest you've earned is withdrawable 12 months after you deposit \(i.e. when the balance matures\).
+The Gluwa Invest Bond Account is an interest-bearing account that offers market-leading yields \(12% APY\) to investors. Users can deposit their stablecoin into the account to start accruing interest daily. Your deposit plus the interest you've earned is withdrawable 3 months after you deposit \(i.e. when the balance matures\).
 
 ## Are there any tax implications for me using the Gluwa Invest Bond Account?
 
