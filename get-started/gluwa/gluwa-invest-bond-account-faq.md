@@ -52,3 +52,11 @@ Gluwa cannot provide any tax, legal or accounting advice. You should always cons
 
 We are required to collect tax information from you in the Subscription Agreement during user sign-up/deposit.
 
+## What is the max amount I am able to deposit/invest? Why is there an investment cap?
+
+It depends. There is a limit to how much you can invest in the Bond Account. The max investment amount is based on this total investment cap remaining for this investment round. Once this round is fully funded and the investment cap is reached, no further investment will be accepted until we open the next investment round.
+
+The liquidity for our impact investments in FinTech lenders who are strive for financial inclusion of the unbanked/underbanked comes directly from you the investors. An investment cap exists to ensure we can match the supply of investor's funds with corresponding demand in investment opportunities. This supports our business model and ensures we can grow sustainably while finding the best impact investments out there!
+
+![](../../.gitbook/assets/image%20%283%29.png)
+
