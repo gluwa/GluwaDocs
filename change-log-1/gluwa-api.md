@@ -4,6 +4,16 @@ description: All release notes pertaining to Gluwa API and Dashboard
 
 # Gluwa API
 
+## 08-13-2021 - Version 2021.08.01
+
+### API
+
+* Fixed Webhookreceiver Signature endpoint 
+* Enhanced Cloudflare IP Address logging 
+* Fixed USDC-G transaction signature validation 
+* Removed unused OTP validation from SNGNG and PegUnpeg 
+* Added Balance Check before processing the transaction
+
 ## 07-27-2021 - Version 2021.07.01
 
 ### Dashboard
