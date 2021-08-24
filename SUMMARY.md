@@ -5,7 +5,6 @@
   * [Gluwa API](change-log-1/gluwa-api.md)
   * [Gluwa Wallet](change-log-1/gluwa-wallet-1.md)
   * [Gluwa Invest](change-log-1/gluwa-invest.md)
-  * [Gluwa Exchange](change-log-1/gluwa-exchange-1.md)
 
 ## Get Started
 
