@@ -15,7 +15,7 @@ Retrieve the current balance of an address.
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
 | currency | `string` | The [currency](currency-and-conversion-symbols.md#currency-symbols) unit of the balance |
-| address | `string` | A string representing how much balance in the currency unit \(e.g., `"1.23"` for 1.23 USD-G\). |
+| address | `string` | The public address associated with the transactions. |
 
 #### Query Parameters
 
