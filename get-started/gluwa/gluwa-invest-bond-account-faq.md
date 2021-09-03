@@ -52,6 +52,14 @@ Your deposited balance plus your earned interest will become withdrawable 3 mont
 
 The 'Available to Drawdown' balance is the amount you are able to draw down at that time. In other words, it is the total of your deposits that have matured by 3 months plus your earned interest.
 
+## What is 'Accrued Interest'?
+
+This is interest that has been earned but not yet paid out.
+
+## What is 'Effective APY'?
+
+This is the real rate of return earned on an investment, taking into account the effect of compounding interest. When you hold multiple Gluwa Invest accounts e.g. Bond Account, Savings and/or Prize-Linked -it will be the aggregated APY across all 3 accounts in Portfolio Dashboard.
+
 ## How does a Gluwa Bond Account work?
 
 The Gluwa Invest Bond Account enables individuals to earn interest on their deposited sUSDC-G stablecoin.
