@@ -4,6 +4,7 @@
 * [Change Log](change-log-1/README.md)
   * [Gluwa API](change-log-1/gluwa-api.md)
   * [Gluwa Wallet](change-log-1/gluwa-wallet-1.md)
+  * [Gluwa Exchange - MM](change-log-1/gluwa-exchange-mm.md)
 
 ## Get Started
 
