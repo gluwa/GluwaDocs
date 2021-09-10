@@ -4,6 +4,21 @@ description: All release notes pertaining to Gluwa Wallet
 
 # Gluwa Wallet
 
+## 09-09-2021 -Version 6.2.1
+
+* Fixed UI logic for Account Setup checklist
+* Fixed incorrect UI text for Account Setup checklist
+
+## 08-09-2021 -Version 6.2.0
+
+* Launched Gluwa Invest Bond Account
+* Enabled Account Setup/Onboarding including Terms and Conditions
+* Enabled sUSDC-G deposit to Bond Account
+* Enabled Portfolio Dashboard for account performance tracking
+* Fixed some non-optional data fields to be optional
+* Disabled USA as Country option \(Product not available in US\)
+* Fixed many cosmetic/UI bugs and inconsistencies
+
 ## 23-08-2021 - Version 6.1.5
 
 * Fixed identity verification referral code expiration
