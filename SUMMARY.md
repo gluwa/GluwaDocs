@@ -1,10 +1,10 @@
 # Table of contents
 
 * [What is Gluwa](README.md)
-* [Change Log](change-log-1/README.md)
-  * [Gluwa API](change-log-1/gluwa-api.md)
-  * [Gluwa Wallet](change-log-1/gluwa-wallet-1.md)
-  * [Gluwa Exchange - MM](change-log-1/gluwa-exchange-mm.md)
+* [Change Log](change-log/README.md)
+  * [Gluwa API Change Log](change-log/gluwa-api.md)
+  * [Gluwa Wallet Change Log](change-log/gluwa-wallet.md)
+  * [Gluwa Exchange Change Log](change-log/gluwa-exchange.md)
 
 ## Get Started
 

@@ -1,4 +1,4 @@
-# Gluwa Exchange - MM
+# Gluwa Exchange Change Log
 
 ## 02-09-2021 - Version 2021.8.1
 

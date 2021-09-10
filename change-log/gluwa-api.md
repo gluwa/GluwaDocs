@@ -2,7 +2,7 @@
 description: All release notes pertaining to Gluwa API and Dashboard
 ---
 
-# Gluwa API
+# Gluwa API Change Log
 
 ## 09-04-2021 - Version 2021.09.1
 

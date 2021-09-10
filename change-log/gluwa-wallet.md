@@ -2,7 +2,7 @@
 description: All release notes pertaining to Gluwa Wallet
 ---
 
-# Gluwa Wallet
+# Gluwa Wallet Change Log
 
 ## 09-09-2021 -Version 6.2.1
 
