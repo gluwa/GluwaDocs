@@ -4,6 +4,20 @@ description: All release notes pertaining to Gluwa API and Dashboard
 
 # Gluwa API
 
+## 09-04-2021 - Version 2021.09.1
+
+### API
+
+* Added API endpoints to support Gluwa Invest Bond Account functionality
+* Added OTP endpoints for Terms and Conditions Onboarding
+* Added user agreement endpoints to manage user data and documents for account sign-up
+* Updated and expanded the Account Setup checklist endpoint
+* Added Bond Account smart contract support
+* Added sUSDC-G deposit endpoint functionality
+* Updated push notifications for Veriff sessions
+* Fixed several InternalServerError issues
+* Fixed some UI flow issues including Verification Failed for iOS devices and Log In navigation issues. 
+
 ## 08-13-2021 - Version 2021.08.01
 
 ### API
