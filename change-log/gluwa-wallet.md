@@ -4,12 +4,16 @@ description: All release notes pertaining to Gluwa Wallet
 
 # Gluwa Wallet Change Log
 
+## 09-21-2021 -Version 6.2.3
+
+* Fixed enabled currencies list
+
 ## 09-09-2021 -Version 6.2.1
 
 * Fixed UI logic for Account Setup checklist
 * Fixed incorrect UI text for Account Setup checklist
 
-## 08-09-2021 -Version 6.2.0
+## 09-08-2021 -Version 6.2.0
 
 * Launched Gluwa Invest Bond Account
 * Enabled Account Setup/Onboarding including Terms and Conditions
@@ -19,7 +23,7 @@ description: All release notes pertaining to Gluwa Wallet
 * Disabled USA as Country option \(Product not available in US\)
 * Fixed many cosmetic/UI bugs and inconsistencies
 
-## 23-08-2021 - Version 6.1.5
+## 08-23-2021 - Version 6.1.5
 
 * Fixed identity verification referral code expiration
 * Fixed erroneous verification declined screen pop-up during flow
@@ -28,18 +32,18 @@ description: All release notes pertaining to Gluwa Wallet
 * Fixed verified Veriff status display on initial app launch
 * Fixed Veriff status display in Sandbox following manual approval
 
-## 12-08-2021 - Version 6.1.4
+## 08-12-2021 - Version 6.1.4
 
 * Lauched Gluwa Invest identity verification \(Veriff\) and in app status display
 * Launched identity verification referral reward campaign
 * Fixed verification failed flow for iOS
 * Fixed navigation issue after selecting 'log in'
 
-## 07-08-2021 - Version 6.1.3
+## 08-07-2021 - Version 6.1.3
 
 * Enhanced user's safety by adding access to the recovery phrase via the Additional Security Menu 
 
-## 06-07-2021 - Version 6.1.2
+## 07-06-2021 - Version 6.1.2
 
 * Improved testing for sKRWC-G and sNGN-G 
 * Enhanced fingerprint and face ID features
