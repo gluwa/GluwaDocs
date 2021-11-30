@@ -9,7 +9,7 @@
 ## Get Started
 
 * [Gluwa Mobile App](get-started/gluwa/README.md)
-  * [Gluwa Invest \(Bond Account\) FAQ](get-started/gluwa/gluwa-invest-bond-account-faq.md)
+  * [Gluwa Invest (Bond Account) FAQ](get-started/gluwa/gluwa-invest-bond-account-faq.md)
   * [Create a New Gluwa Wallet](get-started/gluwa/create-a-new-gluwa-wallet.md)
   * [Restore Wallet](get-started/gluwa/restore-wallet.md)
   * [Send Gluwacoin to an address](get-started/gluwa/send-gluwacoin-to-an-address.md)
@@ -23,7 +23,7 @@
   * [Addresses](get-started/dashboard/addresses.md)
 * [Gluwacoin](get-started/gluwacoin.md)
 
-## Branding <a id="design"></a>
+## Branding <a href="#design" id="design"></a>
 
 * [Buttons and Marks](design/buttons-and-marks.md)
 
@@ -38,7 +38,7 @@
 * [Gluwa SDK for PHP](development/gluwa-sdk-for-php.md)
 * [Gluwa SDK for .NET](development/gluwa-sdk-for-.net.md)
 * [Gluwa SDK for JAVA](development/gluwa-sdk-for-java.md)
-* [Gluwa SDK for Javascript \(Node.js\)](development/gluwa-sdk-for-javascript-nodejs.md)
+* [Gluwa SDK for Javascript (Node.js)](development/gluwa-sdk-for-javascript-nodejs.md)
 
 ## API
 
@@ -53,11 +53,8 @@
 
 ## Exchange API
 
----
-
 * [Exchange Webhook](exchange-webhook.md)
 * [Quote](quote.md)
 * [Order](order.md)
 * [Exchange Request](exchange-request.md)
 * [Order Book](order-book.md)
-
