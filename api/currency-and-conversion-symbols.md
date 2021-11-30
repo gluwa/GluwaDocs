@@ -8,15 +8,14 @@ description: Learn which currencies Gluwa supports.
 
 Below is the list of currencies Gluwa supports:
 
-1. `BTC`
-2. `sUSDCG`
-3. `USDCG`
-4. `USDG`
-5. `sKRWCG`
-6. `KRWG`
-7. `sNGNG`
-8. `NGNG`
-9. `GCRE`
+| Currency                 | Symbol   |
+| ------------------------ | -------- |
+| Bitcoin                  | `BTC`    |
+| CTC (ERC20 Token)        | `GCRE`   |
+| NGN Gluwacoin            | `NGNG`   |
+| USDC Gluwacoin           | `USDCG`  |
+| Sidechain NGNG           | `sNGNG`  |
+| Sidechain USDC Gluwacoin | `sUSDCG` |
 
 ## Conversion Symbols
 
