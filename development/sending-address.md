@@ -90,7 +90,7 @@ const sendAddressData = {
     Environment: 'prod',
 };
 
-const url = `https://app.gluwa.com/action/scan/${encodeURIComponent(JSON.stingify(sendAddressData))}`;
+const url = `https://app.gluwa.com/action/scan/${encodeURIComponent(JSON.stringify(sendAddressData))}`;
 ```
 
 ### After open Gluwa app
