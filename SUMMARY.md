@@ -50,6 +50,7 @@
 * [Fee](api/fee.md)
 * [Transaction](api/transaction.md)
 * [Payment QR Code](api/qr-code.md)
+* [Wrap / Unwrap](api/wrap-unwrap.md)
 
 ## Exchange API
 
