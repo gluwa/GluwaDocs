@@ -4,15 +4,63 @@ description: All release notes pertaining to Gluwa API and Dashboard
 
 # Gluwa API Change Log
 
-## 11-16-2021
+## 02-16-2022 - Version 2022.02
 
 ### API&#x20;
 
+* Launched new Transaction History API endpoint for V7 app redesign
+* Launched API endpoint that displays rate/fee amount per token
+* Launched API endpoint to return current price in USD&#x20;
+* Launched PushNotificationHistory endpoint supporting 'All' currencies
+* Updated QR code to include payload in the response&#x20;
+* Updated blockchain.info 429 (Over limit) responses
+
+## 01-19-2022 - Version 2022-01
+
+### API&#x20;
+
+* Unified ECurrency used by Gluwa API and MarketMaker&#x20;
+* Improved handling of Luniverse and Infura 429 (Over limit) responses&#x20;
+* Added alerts for the addresses monitored&#x20;
+* Added GCRE (CTC ERC-20 Token) support on QR Code endpoint&#x20;
+
+### API - Dashboard
+
+* Updated password policy
+
+## 12-06-2021 - Version 2021.12
+
+### API&#x20;
+
+* Updated CircuitBreaker policy on RPC clients
+* Fixed some minor code smells
+
+### API  - Dashboard
+
+* Updated password policy
+
+## 10-13-2021 - Version 2021.10-1
+
+### API - Gluwa Invest
+
 * Fixed Bond Account deposits showing in push notifications
 
-## 09-04-2021
+### API&#x20;
 
-### API
+* Launched peg/unpeg (USDC-G <> sUSDC-G)
+* Launched USDC-G support&#x20;
+* Updated Peg/Unpeg daily limit and minimum amount&#x20;
+* Fixed API signature format&#x20;
+* Implemented send fee of 0.1% for sUSDC-G&#x20;
+* Replaced GasNow by Etherscan Gas Tracker&#x20;
+* Replaced ETHless Mint in API by user self-service Mint&#x20;
+* Updated GetBalance endpoint
+* Added API endpoint for returning all token balances
+* Added Gluwa API localization for Push Notifications
+
+## 09-04-2021 - Version 2021.09.1
+
+### API - Gluwa Invest
 
 * Added API endpoints to support Gluwa Invest Bond Account functionality
 * Added OTP endpoints for Terms and Conditions Onboarding
@@ -24,7 +72,26 @@ description: All release notes pertaining to Gluwa API and Dashboard
 * Fixed several InternalServerError issues
 * Fixed some UI flow issues including Verification Failed for iOS devices and Log In navigation issues
 
-## 08-13-2021
+### API
+
+* Added API to convert USDC to USDC-G&#x20;
+* Refactored code for peg/unpeg&#x20;
+* Fixed peg endpoint nonce format&#x20;
+* Fixed peg notifications
+* Updated queue client factory in the retry function&#x20;
+* Fixed wrong hashes passed when calling processUnpeg&#x20;
+* Added support for longer nonce in Gluwa API
+* Fixed validating transaction hash before attempting to process&#x20;
+* Fixed peg notifications&#x20;
+* Fixed error in Internal transaction controller for BTC transactions
+
+## 08-30-2021 - Version 2021.08.2
+
+### API
+
+* Fixed transfers on successful peg
+
+## 08-12-2021 - Version 2021.08.1
 
 ### API
 
@@ -34,7 +101,7 @@ description: All release notes pertaining to Gluwa API and Dashboard
 * Removed unused OTP validation from SNGNG and PegUnpeg&#x20;
 * Added Balance Check before processing the transaction
 
-## 07-27-2021
+## 07-28-2021 - Version 2021.07.1
 
 ### Dashboard
 
