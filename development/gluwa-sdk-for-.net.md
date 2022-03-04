@@ -8,9 +8,9 @@ At the moment, our .NET SDK only supports Gluwacoin transfers. For Bitcoin trans
 
 ## Getting Started
 
-The namespace of Gluwa SDK is [`Gluwa.SDK_dotnet`](https://www.nuget.org/packages/Gluwa.SDK_dotnet/). The SDK requires **.NET Core 2.1** or above.
+The namespace of Gluwa SDK is [`Gluwa.SDK_dotnet`](https://www.nuget.org/packages/Gluwa.SDK\_dotnet/). The SDK requires **.NET Core 2.1** or above.
 
-{% embed url="https://www.nuget.org/packages/Gluwa.SDK\_dotnet/" %}
+{% embed url="https://www.nuget.org/packages/Gluwa.SDK_dotnet/" %}
 
 Refer to the Microsoft documentation below to learn how to install Nuget packages.
 
@@ -25,8 +25,8 @@ To use Gluwa API, you need to create a `Client` object and initialize it. There 
 
 {% tabs %}
 {% tab title="Input" %}
-| **Type** | **Description** |
-| :--- | :--- |
+| **Type** | **Description**                                                      |
+| -------- | -------------------------------------------------------------------- |
 | **bool** |  `false` by default. If you want to use the SandBox mode, set `true` |
 {% endtab %}
 {% endtabs %}
@@ -291,4 +291,3 @@ bool bValidated = Webhook.ValidateWebhook(
     signature,
     webhookSecretKey); // true if validation was successful
 ```
-

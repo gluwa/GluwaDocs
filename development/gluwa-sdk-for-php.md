@@ -4,7 +4,7 @@ If your service is developed in PHP, the features we provide are available throu
 
 ## Update
 
-v1.0.9 - Add support sUSDCG \(01/06/2021\)
+v1.0.9 - Add support sUSDCG (01/06/2021)
 
 ## Getting started
 
@@ -41,7 +41,7 @@ $Gluwa = new Gluwa\Gluwa([
 ```
 
 {% hint style="warning" %}
-If you are using PHP 5.6, you need to enable [**php-bcmath**](https://www.php.net/manual/en/book.bc.php) ****because it is not enabled by default prior PHP 7. If it is not installed yet, just install it. Please visit [here](https://www.php.net/manual/en/book.bc.php) for more information.
+If you are using PHP 5.6, you need to enable [**php-bcmath**](https://www.php.net/manual/en/book.bc.php) **** because it is not enabled by default prior PHP 7. If it is not installed yet, just install it. Please visit [here](https://www.php.net/manual/en/book.bc.php) for more information.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -143,9 +143,8 @@ $Response2 = $Gluwa->validateWebhook([
 
 {% tabs %}
 {% tab title="Response" %}
-| Type | Description |
-| :--- | :--- |
+| Type    | Description                                                                                                                                              |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | boolean | This will return `true` if it is a valid webhook. If it returns `false`, you either set an incorrect secret or the webhook did not originate from Gluwa. |
 {% endtab %}
 {% endtabs %}
-

@@ -10,17 +10,31 @@ Enhance your operation with Gluwa API's powerful features. With Gluwa dashboard,
 
 Use API key and secret to use Gluwa's REST API and automate your business logic.
 
-{% page-ref page="api-keys.md" %}
+{% content-ref url="api-keys.md" %}
+[api-keys.md](api-keys.md)
+{% endcontent-ref %}
 
 ## Webhook
 
 Receive webhook notifications when you get a new transfer to your Gluwacoin address.
 
-{% page-ref page="webhooks.md" %}
+{% content-ref url="webhooks.md" %}
+[webhooks.md](webhooks.md)
+{% endcontent-ref %}
 
 ## Addresses
 
-Verify your ownership of a Gluwacoin address and receive webhook notifications for it.
+Verify your ownership of a Gluwacoin address in order to receive webhook notifications, and transaction history for it.
 
-{% page-ref page="addresses.md" %}
+{% content-ref url="addresses.md" %}
+[addresses.md](addresses.md)
+{% endcontent-ref %}
+
+## Transactions
+
+Easily view your transaction history for a registered address/currency
+
+{% content-ref url="transactions.md" %}
+[transactions.md](transactions.md)
+{% endcontent-ref %}
 

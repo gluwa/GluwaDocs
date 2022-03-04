@@ -21,6 +21,7 @@
   * [API Keys](get-started/dashboard/api-keys.md)
   * [Webhooks](get-started/dashboard/webhooks.md)
   * [Addresses](get-started/dashboard/addresses.md)
+  * [Transactions](get-started/dashboard/transactions.md)
 * [Gluwacoin](get-started/gluwacoin.md)
 
 ## Branding <a href="#design" id="design"></a>
