@@ -4,6 +4,19 @@ description: All release notes pertaining to Gluwa Wallet
 
 # Gluwa Wallet Change Log
 
+## 12-06-2021 - Version 6.2.7
+
+* Launched G-CRE support (get balance)&#x20;
+* Updated email address referenced on Address Document screen
+
+## 11-24-2021 - Version 6.2.6
+
+* Launched USDC-G&#x20;
+* Disabled KRW-G and USD-G
+* Gluwa Invest Product
+  * Replaced `approve` txn signature with `increaseAllowance` for Bond Account deposits
+  * Updated Bond Account contract used on Sandbox Disable USD-G in Gluwa App
+
 ## 11-16-2021 - Version 6.2.5
 
 * Gluwa Invest Product
@@ -13,6 +26,7 @@ description: All release notes pertaining to Gluwa Wallet
   * Updated Bond Account transactions screen text
   * Removed redundent 'amount' field from drawdown screen
   * Removed ability to specify wallet address for draw down
+* Set send fee to 0.1% for sUSDC-G
 
 ## 09-21-2021 -Version 6.2.3
 
