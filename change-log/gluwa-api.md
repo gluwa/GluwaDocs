@@ -8,9 +8,9 @@ description: All release notes pertaining to Gluwa API and Dashboard
 
 ### API&#x20;
 
-* ETH token support (getbalance/payments/transfers)
-* USDC token support (getbalance/payments/transfers)
-* USDT support (getbalance/payments/transfers)
+* ETH token support (getbalance/payment/transfer)
+* USDC token support (getbalance/payment/transfer)
+* USDT support (getbalance/payment/transfer)
 * CTC support (payments/transfers)
 * Lottery Account fixes
 
