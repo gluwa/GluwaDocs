@@ -4,6 +4,30 @@ description: All release notes pertaining to Gluwa API and Dashboard
 
 # Gluwa API Change Log
 
+## 05-12-2022 - Version 2022.05.01
+
+### API&#x20;
+
+* ETH token support (getbalance/payments/transfers)
+* USDC token support (getbalance/payments/transfers)
+* USDT support (getbalance/payments/transfers)
+* CTC support (payments/transfers)
+* Lottery Account fixes
+
+## 03-21-2022 - Version 2022.03.02
+
+### API&#x20;
+
+* Fixed amount and fee for exchange transactions
+
+## 03-21-2022 - Version 2022.03.01
+
+### API&#x20;
+
+* Added pagination and fixed negative values + currency amount for push notifications
+* Updated maturity date and deposits + withdrawals in transaction history
+* Improved an error handling of "No minimumBlockchainFee"
+
 ## 02-16-2022 - Version 2022.02
 
 ### API&#x20;
