@@ -6,7 +6,7 @@ description: All release notes pertaining to Gluwa API and Dashboard
 
 
 
-## 05-12-2022 - Version 2022.05.01
+## 05-16-2022 - Version 2022.05.01
 
 ### API&#x20;
 
