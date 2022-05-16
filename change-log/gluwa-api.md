@@ -12,8 +12,8 @@ description: All release notes pertaining to Gluwa API and Dashboard
 
 * ETH token support (getbalance/payment/transfer)
 * USDC token support (getbalance/payment/transfer)
-* USDT support (getbalance/payment/transfer)
-* CTC support (payments/transfers)
+* USDT token support (getbalance/payment/transfer)
+* CTC token support (payments/transfers)
 * Lottery Account fixes
 
 ## 03-21-2022 - Version 2022.03.02
